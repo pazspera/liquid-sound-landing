@@ -13,6 +13,7 @@ export default function ContactForm() {
               label="Nombre"
               variant="filled"
               type="text"
+              fullWidth
               required
             />
           </Grid>
@@ -22,6 +23,7 @@ export default function ContactForm() {
               label="Telefono"
               variant="filled"
               type="tel"
+              fullWidth
               required            
             />
           </Grid>
@@ -31,6 +33,7 @@ export default function ContactForm() {
               label="Empresa"
               variant="filled"
               type="text"
+              fullWidth
             />
           </Grid>
 
@@ -40,6 +43,7 @@ export default function ContactForm() {
               variant="filled"
               type="email"
               required
+              fullWidth
             />
           </Grid>
 
