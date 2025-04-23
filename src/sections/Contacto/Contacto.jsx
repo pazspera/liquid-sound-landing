@@ -8,7 +8,7 @@ export default function Contacto() {
     <>
       <Container maxWidth="xl" className={styles.contactContainer} sx={{ display: "block" }}>
         <Box>
-          <Typography variant="h3" sx={{ textAlign: "center" }}>Contacto</Typography>
+          <Typography variant="h3" component="h2" sx={{ textAlign: "center" }}>Contacto</Typography>
         </Box>
         <ContactForm></ContactForm>
       </Container>
