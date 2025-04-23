@@ -6,8 +6,9 @@ export default function ContactForm() {
   return (
     <>
       <form>
-        <Grid container spacing={2}>
-          <Grid item>
+        {/* spacing genera scroll horizontal en mobile */}
+        <Grid container rowSpacing={2} columnSpacing={{ xs: 0, md: 2 }}>
+          <Grid item xs={12} md={6}>
             <TextField 
               label="Nombre"
               variant="filled"
@@ -16,7 +17,7 @@ export default function ContactForm() {
             />
           </Grid>
 
-          <Grid item>
+          <Grid item xs={12} md={6}>
             <TextField 
               label="Telefono"
               variant="filled"
@@ -25,7 +26,7 @@ export default function ContactForm() {
             />
           </Grid>
 
-          <Grid item>
+          <Grid item xs={12} md={6}>
             <TextField
               label="Empresa"
               variant="filled"
@@ -33,7 +34,7 @@ export default function ContactForm() {
             />
           </Grid>
 
-          <Grid item>
+          <Grid item xs={12} md={6}>
             <TextField 
               label="Email"
               variant="filled"
@@ -42,12 +43,13 @@ export default function ContactForm() {
             />
           </Grid>
 
-          <Grid item>
+          <Grid item xs={12}>
             <Button 
               variant="contained" 
               type="submit" 
               size="large"
-              fullWidth>
+              fullWidth
+            >
                 Enviar
             </Button>
           </Grid>
