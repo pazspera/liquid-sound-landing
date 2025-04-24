@@ -6,9 +6,12 @@ export default function Contacto() {
 
   return (
     <>
-      <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" align="center">Contact</Typography>
-      </Container>
+      <Box className={styles.contactContainer}>
+        <Container maxWidth="lg">
+          <Typography variant="h3" component="h2" align="center">Contacto</Typography>
+          <ContactForm></ContactForm>
+        </Container>
+      </Box>
     </>
   )
 }
