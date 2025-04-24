@@ -6,8 +6,8 @@ export default function Contacto() {
 
   return (
     <>
-      <Box sx={{ width: "100vw", backgroundColor: "blue" }}>
-        <Container maxWidth="xl" className={styles.contactContainer} sx={{ px: { xs: 2, md: 0 } }}>
+      <Box sx={{ backgroundColor: "blue", overflowX: "hidden", py: 4 }}>
+        <Container maxWidth="lg" className={styles.contactContainer} sx={{ px: 2 }}>
           <Box>
             <Typography variant="h3" component="h2" align="center" gutterBottom>Contacto</Typography>
           </Box>
