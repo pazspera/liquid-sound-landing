@@ -8,7 +8,7 @@ export default function Contacto() {
     <>
       <Box className={styles.contactContainer}>
         <Container maxWidth="lg">
-          <Typography variant="h3" component="h2" align="center">Contacto</Typography>
+          <Typography variant="h3" component="h2" align="center" gutterBottom>Contacto</Typography>
           <ContactForm></ContactForm>
         </Container>
       </Box>
