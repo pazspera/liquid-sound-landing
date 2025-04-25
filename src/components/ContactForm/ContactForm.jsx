@@ -1,8 +1,8 @@
-import { Grid, TextField, Checkbox, FormControlLabel, Button } from "@mui/material";
+import { Grid, TextField, Checkbox, FormControlLabel, Button, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
 
   console.log(errors);
 
@@ -23,6 +23,11 @@ export default function ContactForm() {
               fullWidth 
               {...register("nombre", { required: "El campo es obligatorio" })} 
             />
+            {errors.nombre && (
+              <Typography variant="body2" color="error">
+                {errors.nombre.message}
+              </Typography>
+            )}
           </Grid>
           <Grid item size={{ xs: 12, md: 6, lg: 5 }}>
             <TextField 
@@ -48,6 +53,11 @@ export default function ContactForm() {
                 } 
               })} 
             />
+            {errors.telefono && (
+              <Typography variant="body2" color="error">
+                {errors.telefono.message}
+              </Typography>
+            )}
           </Grid>
           <Grid item size={{ xs: 12, md: 6, lg: 5 }}>
             <TextField 
@@ -58,6 +68,11 @@ export default function ContactForm() {
               fullWidth 
               {...register("email", { required: "El campo es obligatorio" })}
             />
+            {errors.email && (
+              <Typography variant="body2" color="error">
+                {errors.email.message}
+              </Typography>
+            )}
           </Grid>
           <Grid item size={{ xs: 12, lg: 11 }} offset={{ lg: 1 }}>
             <FormControlLabel 
