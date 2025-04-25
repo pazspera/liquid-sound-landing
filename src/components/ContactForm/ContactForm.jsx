@@ -6,8 +6,24 @@ export default function ContactForm() {
 
   console.log(errors);
 
-  const handleForm = (data) => {
-    console.log(data)
+  const handleForm = async (data) => {
+    console.log(data);
+
+    try {
+      const res = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      console.log("resultado");
+      console.log(result);
+    } catch (error) {
+      console.log("error");
+      console.log(error);
+    }
+
   }
 
   return (

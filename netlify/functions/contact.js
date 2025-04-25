@@ -15,20 +15,23 @@ export async function handler(event) {
 
   try {
     const response = await resend.emails.send({
-      from: "Formulario <no-reply@liquidsound.com.ar>",
-      to: "spera.paz@gmail.com",
+      from: "Formulario <onboarding@resend.dev>",
+      to: ['pazspera@outlook.com'],
       subject: "Mensaje formulario landing",
-      text: `Nombre: ${nombre} - Empresa: ${empresa} - Teléfono: ${telefono} - Email: ${email} - Newsletter: ${newsletter ? "Sí" : "No"}`.trim();
+      text: `Nombre: ${nombre} - Empresa: ${empresa} - Teléfono: ${telefono} - Email: ${email} - Newsletter: ${newsletter ? "Sí" : "No"}`.trim()
     })
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, id: response.id });
+      body: JSON.stringify({ success: true, id: response.id }),
+      headers: {
+        'Access-Control-Allow-Origin': '*',  
+      },
     };
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message });
+      body: JSON.stringify({ error: error.message }),
     }
   }
 
