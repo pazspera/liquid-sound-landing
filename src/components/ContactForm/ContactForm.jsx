@@ -2,13 +2,17 @@ import { Grid, TextField, Checkbox, FormControlLabel, Button } from "@mui/materi
 import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  console.log(errors);
+
+  const handleForm = (data) => {
+    console.log(data)
+  }
 
   return (
     <>
-      <form onSubmit={handleSubmit((data)=> {
-        console.log(data)
-      })}>
+      <form onSubmit={handleSubmit(handleForm)}>
         <Grid container rowSpacing={2} columnSpacing={2}>
           <Grid item size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
             <TextField 
@@ -17,7 +21,7 @@ export default function ContactForm() {
               type="text" 
               required
               fullWidth 
-              {...register("nombre")} 
+              {...register("nombre", { required: "El campo es obligatorio" })} 
             />
           </Grid>
           <Grid item size={{ xs: 12, md: 6, lg: 5 }}>
@@ -36,7 +40,13 @@ export default function ContactForm() {
               type="tel" 
               required 
               fullWidth 
-              {...register("telefono")} 
+              {...register("telefono", { 
+                required: "El campo es obligatorio", 
+                minLength: { 
+                  value: 8,
+                  message: "El teléfono debe tener al menos 8 números"
+                } 
+              })} 
             />
           </Grid>
           <Grid item size={{ xs: 12, md: 6, lg: 5 }}>
@@ -46,7 +56,7 @@ export default function ContactForm() {
               type="email" 
               required 
               fullWidth 
-              {...register("email")}
+              {...register("email", { required: "El campo es obligatorio" })}
             />
           </Grid>
           <Grid item size={{ xs: 12, lg: 11 }} offset={{ lg: 1 }}>
