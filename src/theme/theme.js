@@ -8,6 +8,32 @@ const theme = createTheme({
     secondary: {
       main: "#7EBDC2",
     }
+  },
+  typography: {
+    h1: {
+      fontFamily: "'Helvetica', 'Arial', sans-serif",
+      fontWeight: 700,
+    },
+    h2: {
+      fontFamily: "'Helvetica', 'Arial', sans-serif",
+      fontWeight: 700,
+    },
+    h3: {
+      fontFamily: "'Helvetica', 'Arial', sans-serif",
+      fontWeight: 700,
+    },
+    h4: {
+      fontFamily: "'Helvetica', 'Arial', sans-serif",
+      fontWeight: 700,
+    },
+    h5: {
+      fontFamily: "'Helvetica', 'Arial', sans-serif",
+      fontWeight: 700,
+    },
+    h6: {
+      fontFamily: "'Helvetica', 'Arial', sans-serif",
+      fontWeight: 700,
+    },
   }
 });
 
