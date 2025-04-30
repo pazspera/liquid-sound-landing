@@ -1,5 +1,6 @@
 import { useTheme } from "@mui/material/styles";
 import { Container, Grid, Typography } from "@mui/material";
+import CardHighlight from "../../components/CardHighlight/CardHighlight";
 
 export default function  PorQueElegirnos() {
   const theme = useTheme();
@@ -46,6 +47,9 @@ export default function  PorQueElegirnos() {
               ¿Por qué elegirnos?
             </Typography>
           </Grid>
+          {cards.map((card)=> (
+            <CardHighlight card={card} key={card.id} />
+          ))}      
         </Grid>
       </Container>
     </>
