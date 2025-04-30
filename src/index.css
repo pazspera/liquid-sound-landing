@@ -3,8 +3,8 @@
 /* Optimal normal */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimalLTStd.otf") format("opentype"),
-      url("/fonts/OptimaLTStd.woff2") format("woff2");
+  src: url("/fonts/OptimaLTStd.woff2") format("woff2"),
+    url("/fonts/OptimalLTStd.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -13,8 +13,8 @@
 /* Optimal italic */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-Italic.otf") format("opentype"),
-      url("/fonts/OptimaLTStd-Italic.woff2") format("woff2");
+  src: url("/fonts/OptimaLTStd-Italic.woff2") format("woff2"),
+    url("/fonts/OptimaLTStd-Italic.woff") format("woff");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -23,8 +23,8 @@
 /* Optimal demibold */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-DemiBold.otf") format("opentype"),
-      url("/fonts/OptimaLTStd-DemiBold.woff2") format("woff2");
+  src: url("/fonts/OptimaLTStd-DemiBold.woff2") format("woff2"),
+    url("/fonts/OptimaLTStd-DemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -33,8 +33,8 @@
 /* Optimal bold */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-Bold.otf") format("opentype"),
-    url("/fonts/OptimaLTStd-Bold.woff2") format("woff2");
+  src: url("/fonts/OptimaLTStd-Bold.woff2") format("woff2"),
+    url("/fonts/OptimaLTStd-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
