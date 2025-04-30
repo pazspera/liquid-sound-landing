@@ -85,7 +85,13 @@ export default function ContactForm() {
               required 
               fullWidth
               sx={{ backgroundColor: theme.palette.common.white}} 
-              {...register("email", { required: "El campo es obligatorio" })}
+              {...register("email", {
+                required: "El campo es obligatorio",
+                pattern: {
+                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                  message: "Formato de email inválido"
+                }
+              })}
             />
             {errors.email && (
               <ErrorMessage message={errors.email.message} />
