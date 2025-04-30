@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: "#242B74",
@@ -52,6 +52,7 @@ const theme = createTheme({
     h3: {
       fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
       fontWeight: 400,
+      fontSize: "48px",
     },
     h4: {
       fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
@@ -108,5 +109,19 @@ const theme = createTheme({
     }
   }
 });
+
+theme = createTheme(theme, {
+  typography: {
+    h3: {
+      ...theme.typography.h3,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "36px"
+      },
+      [theme.breakpoints.down("lg")]: {
+        fontSize: "40px"
+      }
+    }
+  }
+})
 
 export default theme;

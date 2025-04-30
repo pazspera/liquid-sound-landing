@@ -32,6 +32,7 @@ export default function Hero() {
             <CardMedia 
               component="img"
               image="/img/hero-img.png"
+              alt="Profesional con bata y guantes desinfectando una superficie quirúrgica"
               srcSet={
                 "/img/hero-img-small.png 480w, /img/hero-img-medium.png 768w, /img/hero-img-large.png 1280w"
               }
