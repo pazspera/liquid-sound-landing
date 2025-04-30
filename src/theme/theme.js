@@ -97,7 +97,7 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        root: {
+        contained: {
           backgroundColor: "#7EBDC2",
           color: "#242B74",
           "&:hover": {
