@@ -14,8 +14,8 @@ const theme = createTheme({
     },
     text: {
       primary: "#161413",
-      secondary: "#242B74",
-      white: "#FFFDF7"
+      secondary: (theme) => theme.palette.primary.main,
+      white: (theme) => theme.palette.common.white,
     },
     common: {
       black: "#161413",
@@ -30,7 +30,7 @@ const theme = createTheme({
       main: "#2A6041",
     },
     error: {
-      main: "#7A0002",
+      main: "#F76E64",
     },
     info: {
       main: "#58A0D1",
@@ -91,6 +91,11 @@ const theme = createTheme({
   },
   layout: {
     sectionPadding: "48px 0",
+    titlePadding: "0 0 16px 0",
+    errorPadding: "8px 0",
+  },
+  components: {
+    
   }
 });
 

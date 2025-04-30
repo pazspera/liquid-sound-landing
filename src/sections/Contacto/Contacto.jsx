@@ -16,7 +16,8 @@ export default function Contacto() {
         <Container maxWidth="lg">
           <Typography variant="h3" component="h2" align="center" gutterBottom 
             sx={{
-              color: theme.palette.text.white
+              color: theme.palette.text.white,
+              padding: theme.layout.titlePadding,
             }}
            >Contacto</Typography>
           <ContactForm></ContactForm>

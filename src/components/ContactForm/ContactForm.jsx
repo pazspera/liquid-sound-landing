@@ -1,8 +1,10 @@
 import { Grid, TextField, Checkbox, FormControlLabel, Button, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { useTheme } from "@mui/material/styles";
 
 export default function ContactForm() {
   const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
+  const theme = useTheme();
 
   console.log(errors);
 
@@ -38,9 +40,10 @@ export default function ContactForm() {
               required
               fullWidth 
               {...register("nombre", { required: "El campo es obligatorio" })} 
+              sx={{ backgroundColor: theme.palette.common.white}}
             />
             {errors.nombre && (
-              <Typography variant="body2" color="error">
+              <Typography variant="body2" color="error" sx={{ padding: theme.layout.errorPadding }}>
                 {errors.nombre.message}
               </Typography>
             )}
@@ -51,7 +54,8 @@ export default function ContactForm() {
               label="Empresa" 
               type="text" 
               fullWidth
-              {...register("empresa")} 
+              {...register("empresa")}
+              sx={{ backgroundColor: theme.palette.common.white}} 
             />
           </Grid>
           <Grid item size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
@@ -61,6 +65,7 @@ export default function ContactForm() {
               type="tel" 
               required 
               fullWidth 
+              sx={{ backgroundColor: theme.palette.common.white}}
               {...register("telefono", { 
                 required: "El campo es obligatorio", 
                 minLength: { 
@@ -70,7 +75,7 @@ export default function ContactForm() {
               })} 
             />
             {errors.telefono && (
-              <Typography variant="body2" color="error">
+              <Typography variant="body2" color="error" sx={{ padding: theme.layout.errorPadding }}>
                 {errors.telefono.message}
               </Typography>
             )}
@@ -81,20 +86,36 @@ export default function ContactForm() {
               label="Email" 
               type="email" 
               required 
-              fullWidth 
+              fullWidth
+              sx={{ backgroundColor: theme.palette.common.white}} 
               {...register("email", { required: "El campo es obligatorio" })}
             />
             {errors.email && (
-              <Typography variant="body2" color="error">
+              <Typography variant="body2" color="error" sx={{ padding: theme.layout.errorPadding }}>
                 {errors.email.message}
               </Typography>
             )}
           </Grid>
           <Grid item size={{ xs: 12, lg: 11 }} offset={{ lg: 1 }}>
             <FormControlLabel 
-              control={<Checkbox />} 
+              control={
+                <Checkbox 
+                  sx={{
+                    color: theme.palette.common.white,
+                    '&.Mui-checked': {
+                      color: theme.palette.secondary.main,
+                    }
+                  }}
+                />
+              } 
               label="Suscribirme al newsletter" 
               {...register("newsletter")}
+              sx={{
+                color: theme.palette.common.white,
+                '&.Mui-checked': {
+                  color: theme.palette.common.white,
+                }
+              }}
             />
           </Grid>
           <Grid item size={{ xs: 12, md: 10, lg: 6 }} offset={{ xs: 0, md: 1, lg: 3 }}>
