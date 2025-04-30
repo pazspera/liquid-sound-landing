@@ -42,7 +42,8 @@ const theme = createTheme({
       fontFamily: "'Optimal LT Std', serif",
     },
     button: {
-      fontFamily: "'Optimal LT Std', serif",
+      fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
+      letterSpacing: "2px",
     },
     subtitle1: {
       fontFamily: "'Optimal LT Std', serif",
