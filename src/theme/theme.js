@@ -10,6 +10,7 @@ const theme = createTheme({
     }
   },
   typography: {
+    fontFamily: "'Optimal LT Std', serif",
     h1: {
       fontFamily: "'Helvetica', 'Arial', sans-serif",
       fontWeight: 700,

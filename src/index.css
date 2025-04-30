@@ -2,8 +2,9 @@
 @font-face {
   font-family: "Helvetica";
   src: url("/fonts/Helvetica.ttf") format("truetype");
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Helvetica bold */
@@ -12,5 +13,95 @@
   src: url("/fonts/Helvetica-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
+/* Optimal normal */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimalLTStd.otf") format("openType");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optimal italic */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-Italic.otf") format("openType");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Optimal medium */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-Medium.otf") format("openType");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optimal medium italic */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-MediumItalic.otf") format("openType");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Optimal demibold */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-DemiBold.otf") format("openType");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optimal demibold italic */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-DemiBoldItalic.otf") format("openType");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Optimal bold */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-Bold.otf") format("openType");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optimal bold italic */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-BoldItalic.otf") format("openType");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Optimal black */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-Black.otf") format("openType");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optimal black italic */
+@font-face {
+  font-family: "Optimal LT Std";
+  src: url("/fonts/OptimaLTStd-BlackItalic.otf") format("openType");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
