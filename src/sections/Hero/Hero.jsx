@@ -8,7 +8,7 @@ export default function Hero() {
     <>
       <Container maxWidth="lg" sx={{ py: theme.layout.sectionPadding }}>
         <Grid container direction="row" spacing={2} sx={{ display: "flex", alignItems: "center"}}>
-          <Grid size={{ xs: 12, md: 6, lg: 6 }}>
+          <Grid item size={{ xs: 12, md: 6, lg: 6 }}>
             <Typography 
               variant="h3" 
               component="h1" 
@@ -23,12 +23,12 @@ export default function Hero() {
             <Typography component="p">
               Productos certificados que facilitan ambientes limpios y protegidos, garantizando el cumplimiento normativo y la seguridad en espacios que requieren altos estándares de limpieza.
             </Typography>
-            <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row"}, gap: 2, padding: "16px 0", alignItems: "left" }}>
+            <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row"}, gap: 2, padding: "16px 0", alignItems: "left" }}>
               <Button variant="contained" component="a" href="https://www.liquidsound.com.ar/" target="_blank" rel="noopener noreferrer">Ir a la tienda</Button>
               <Button variant="text" href="#contacto">Pedir cotización</Button>
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
+          <Grid item size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
             <CardMedia 
               component="img"
               image="/img/hero-img.png"

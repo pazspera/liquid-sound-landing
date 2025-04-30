@@ -1,9 +1,16 @@
+import { useTheme } from "@mui/material/styles";
+import { Container, Grid } from "@mui/material";
 
 export default function  PorQueElegirnos() {
+  const theme = useTheme();
 
   return (
     <>
-      <p>Por qué elegirnos</p>
+      <Container maxWidth="lg" sx={{ py: theme.layout.sectionPadding }}>
+        <Grid container>
+          <Grid></Grid>
+        </Grid>
+      </Container>
     </>
   )
 }
