@@ -1,37 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
 
-/* Helvetica normal */
-@font-face {
-  font-family: "Helvetica Custom";
-  src: url("/fonts/Helvetica.ttf") format("truetype"),
-      url("/fonts/Helvetica.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Helvetica bold */
-@font-face {
-  font-family: "Helvetica Custom";
-  src: url("/fonts/Helvetica-Bold.ttf") format("truetype"),
-      url("/fonts/Helvetica-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Helvetica Neue bold */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/HelveticaNeueBold.otf") format("truetype"),
-      url("/fonts/HelveticaNeueBold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-
-
 /* Optimal normal */
 @font-face {
   font-family: "Optimal LT Std";
@@ -52,26 +20,6 @@
   font-display: swap;
 }
 
-/* Optimal medium */
-@font-face {
-  font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-Medium.otf") format("opentype"),
-      url("/fonts/OptimaLTStd-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Optimal medium italic */
-@font-face {
-  font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-MediumItalic.otf") format("opentype"),
-      url("/fonts/OptimaLTStd-MediumItalic.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* Optimal demibold */
 @font-face {
   font-family: "Optimal LT Std";
@@ -79,16 +27,6 @@
       url("/fonts/OptimaLTStd-DemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
-}
-
-/* Optimal demibold italic */
-@font-face {
-  font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-DemiBoldItalic.otf") format("opentype"),
-      url("/fonts/OptimaLTStd-DemiBoldItalic.woff2") format("woff2");
-  font-weight: 600;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -100,38 +38,4 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-}
-
-/* Optimal bold italic */
-@font-face {
-  font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-BoldItalic.otf") format("opentype"),
-    url("/fonts/OptimaLTStd-BoldItalic.woff2") format("woff2");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* Optimal black */
-@font-face {
-  font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-Black.otf") format("opentype"),
-      url("/fonts/OptimaLTStd-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Optimal black italic */
-@font-face {
-  font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-BlackItalic.otf") format("opentype"),
-      url("/fonts/OptimaLTStd-BlackItalic.woff2") format("woff2");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-body {
-  font-family: "Helvetica Custom", sans-serif !important;
 }
