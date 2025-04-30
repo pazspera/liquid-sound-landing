@@ -1,7 +1,8 @@
 /* Helvetica normal */
 @font-face {
   font-family: "Helvetica";
-  src: url("/fonts/Helvetica.ttf") format("truetype");
+  src: url("/fonts/Helvetica.ttf") format("truetype"),
+      url("/fonts/Helvetica.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,7 +11,8 @@
 /* Helvetica bold */
 @font-face {
   font-family: "Helvetica";
-  src: url("/fonts/Helvetica-Bold.ttf") format("truetype");
+  src: url("/fonts/Helvetica-Bold.ttf") format("truetype"),
+      url("/fonts/Helvetica-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -19,7 +21,8 @@
 /* Optimal normal */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimalLTStd.otf") format("openType");
+  src: url("/fonts/OptimalLTStd.otf") format("opentype"),
+      url("/fonts/OptimaLTStd.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -28,7 +31,8 @@
 /* Optimal italic */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-Italic.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-Italic.otf") format("opentype"),
+      url("/fonts/OptimaLTStd-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -37,7 +41,8 @@
 /* Optimal medium */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-Medium.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-Medium.otf") format("opentype"),
+      url("/fonts/OptimaLTStd-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -46,7 +51,8 @@
 /* Optimal medium italic */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-MediumItalic.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-MediumItalic.otf") format("opentype"),
+      url("/fonts/OptimaLTStd-MediumItalic.woff2") format("woff2");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -55,7 +61,8 @@
 /* Optimal demibold */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-DemiBold.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-DemiBold.otf") format("opentype"),
+      url("/fonts/OptimaLTStd-DemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -64,7 +71,8 @@
 /* Optimal demibold italic */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-DemiBoldItalic.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-DemiBoldItalic.otf") format("opentype"),
+      url("/fonts/OptimaLTStd-DemiBoldItalic.woff2") format("woff2");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -73,7 +81,8 @@
 /* Optimal bold */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-Bold.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-Bold.otf") format("opentype"),
+    url("/fonts/OptimaLTStd-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -82,7 +91,8 @@
 /* Optimal bold italic */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-BoldItalic.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-BoldItalic.otf") format("opentype"),
+    url("/fonts/OptimaLTStd-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -91,7 +101,8 @@
 /* Optimal black */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-Black.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-Black.otf") format("opentype"),
+      url("/fonts/OptimaLTStd-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -100,7 +111,8 @@
 /* Optimal black italic */
 @font-face {
   font-family: "Optimal LT Std";
-  src: url("/fonts/OptimaLTStd-BlackItalic.otf") format("openType");
+  src: url("/fonts/OptimaLTStd-BlackItalic.otf") format("opentype"),
+      url("/fonts/OptimaLTStd-BlackItalic.woff2") format("woff2");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
