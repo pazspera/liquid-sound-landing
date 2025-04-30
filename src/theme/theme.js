@@ -95,7 +95,17 @@ const theme = createTheme({
     errorPadding: "8px 0",
   },
   components: {
-    
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#7EBDC2",
+          color: "#242B74",
+          "&:hover": {
+            backgroundColor: "#ACD5D8",
+          }
+        }
+      }
+    }
   }
 });
 
