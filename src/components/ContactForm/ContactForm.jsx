@@ -1,6 +1,7 @@
-import { Grid, TextField, Checkbox, FormControlLabel, Button, Typography } from "@mui/material";
+import { Grid, TextField, Checkbox, FormControlLabel, Button, Typography, Box } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useTheme } from "@mui/material/styles";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 export default function ContactForm() {
   const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
@@ -43,9 +44,7 @@ export default function ContactForm() {
               sx={{ backgroundColor: theme.palette.common.white}}
             />
             {errors.nombre && (
-              <Typography variant="body2" color="error" sx={{ padding: theme.layout.errorPadding }}>
-                {errors.nombre.message}
-              </Typography>
+              <ErrorMessage message={errors.nombre.message}/>
             )}
           </Grid>
           <Grid item size={{ xs: 12, md: 6, lg: 5 }}>
@@ -75,9 +74,7 @@ export default function ContactForm() {
               })} 
             />
             {errors.telefono && (
-              <Typography variant="body2" color="error" sx={{ padding: theme.layout.errorPadding }}>
-                {errors.telefono.message}
-              </Typography>
+              <ErrorMessage message={errors.telefono.message} />
             )}
           </Grid>
           <Grid item size={{ xs: 12, md: 6, lg: 5 }}>
@@ -91,9 +88,7 @@ export default function ContactForm() {
               {...register("email", { required: "El campo es obligatorio" })}
             />
             {errors.email && (
-              <Typography variant="body2" color="error" sx={{ padding: theme.layout.errorPadding }}>
-                {errors.email.message}
-              </Typography>
+              <ErrorMessage message={errors.email.message} />
             )}
           </Grid>
           <Grid item size={{ xs: 12, lg: 11 }} offset={{ lg: 1 }}>
