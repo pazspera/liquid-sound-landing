@@ -88,6 +88,9 @@ const theme = createTheme({
     overline: {
       fontFamily: "'Optimal LT Std', serif",
     }
+  },
+  layout: {
+    sectionPadding: "48px 0",
   }
 });
 
