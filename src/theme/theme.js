@@ -7,6 +7,36 @@ const theme = createTheme({
     }, 
     secondary: {
       main: "#7EBDC2",
+    },
+    background: {
+      default: "#FDF8ED",
+      footer: "#ACD5D8"
+    },
+    text: {
+      primary: "#161413",
+      secondary: "#242B74",
+      white: "#FFFDF7"
+    },
+    common: {
+      black: "#161413",
+      white: "#FFFDF7"
+    },
+    custom: {
+      grayLight: "#D0CBC8",
+      grayMedium: "#837872",
+      grayDark: "#2C2826",
+    },
+    success: {
+      main: "#2A6041",
+    },
+    error: {
+      main: "#7A0002",
+    },
+    info: {
+      main: "#58A0D1",
+    },
+    warning: {
+      main: "#E6A637",
     }
   },
   typography: {
