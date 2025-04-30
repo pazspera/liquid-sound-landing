@@ -10,7 +10,7 @@ export default function Hero() {
         <Grid container direction="row" spacing={2} sx={{ display: "flex", alignItems: "center"}}>
           <Grid item size={{ xs: 12, md: 6, lg: 6 }}>
             <Typography 
-              variant="h3" 
+              variant="h1" 
               component="h1" 
               gutterBottom 
               sx={{ 

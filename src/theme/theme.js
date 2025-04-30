@@ -44,6 +44,7 @@ let theme = createTheme({
     h1: {
       fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
       fontWeight: 400,
+      fontSize: "48px"
     },
     h2: {
       fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
@@ -52,7 +53,7 @@ let theme = createTheme({
     h3: {
       fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
       fontWeight: 400,
-      fontSize: "48px",
+      fontSize: "42px",
     },
     h4: {
       fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
@@ -112,13 +113,22 @@ let theme = createTheme({
 
 theme = createTheme(theme, {
   typography: {
-    h3: {
-      ...theme.typography.h3,
+    h1: {
+      ...theme.typography.h1,
       [theme.breakpoints.down("sm")]: {
         fontSize: "36px"
       },
       [theme.breakpoints.down("lg")]: {
         fontSize: "40px"
+      }
+    },
+    h3: {
+      ...theme.typography.h3,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "30px"
+      },
+      [theme.breakpoints.down("lg")]: {
+        fontSize: "36px"
       }
     }
   }
