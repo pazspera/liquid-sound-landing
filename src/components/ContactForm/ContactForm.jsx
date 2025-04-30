@@ -67,10 +67,14 @@ export default function ContactForm() {
               sx={{ backgroundColor: theme.palette.common.white}}
               {...register("telefono", { 
                 required: "El campo es obligatorio", 
+                pattern: {
+                  value: /^[0-9]+$/,
+                  message: "Ingrese solamente números en este campo"
+                },
                 minLength: { 
                   value: 8,
                   message: "El teléfono debe tener al menos 8 números"
-                } 
+                }
               })} 
             />
             {errors.telefono && (
