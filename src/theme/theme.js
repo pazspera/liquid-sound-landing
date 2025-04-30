@@ -90,7 +90,7 @@ const theme = createTheme({
     }
   },
   layout: {
-    sectionPadding: "48px 0",
+    sectionPadding: "48px",
     titlePadding: "0 0 16px 0",
     errorPadding: "8px 0",
   },

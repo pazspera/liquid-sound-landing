@@ -11,7 +11,7 @@ export default function Contacto() {
       <Box 
         sx={{
           backgroundColor: theme.palette.primary.main,
-          padding: theme.layout.sectionPadding
+          py: theme.layout.sectionPadding
         }}>
         <Container maxWidth="lg">
           <Typography variant="h3" component="h2" align="center" gutterBottom 
