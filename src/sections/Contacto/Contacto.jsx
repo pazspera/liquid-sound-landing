@@ -8,7 +8,7 @@ export default function Contacto() {
 
   return (
     <>
-      <Box 
+      <Box id="contacto"
         sx={{
           backgroundColor: theme.palette.primary.main,
           py: theme.layout.sectionPadding

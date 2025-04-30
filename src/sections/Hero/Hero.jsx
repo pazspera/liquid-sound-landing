@@ -24,8 +24,8 @@ export default function Hero() {
               Productos certificados que facilitan ambientes limpios y protegidos, garantizando el cumplimiento normativo y la seguridad en espacios que requieren altos estándares de limpieza.
             </Typography>
             <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row"}, gap: 2, padding: "16px 0", alignItems: "left" }}>
-              <Button variant="contained">Ir a la tienda</Button>
-              <Button variant="text">Pedir cotización</Button>
+              <Button variant="contained" component="a" href="https://www.liquidsound.com.ar/" target="_blank" rel="noopener noreferrer">Ir a la tienda</Button>
+              <Button variant="text" href="#contacto">Pedir cotización</Button>
             </Box>
           </Grid>
           <Grid size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
