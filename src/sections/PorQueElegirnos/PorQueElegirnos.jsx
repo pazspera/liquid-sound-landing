@@ -34,7 +34,7 @@ export default function  PorQueElegirnos() {
 
   return (
     <>
-      <Container maxWidth="lg" sx={{ py: theme.layout.sectionPadding }}>
+      <Container maxWidth="xl" sx={{ py: theme.layout.sectionPadding }}>
         <Grid container>
           <Grid item size={{ xs: 12 }}>
             <Typography 
