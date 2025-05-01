@@ -10,13 +10,14 @@ export default function CardSector({card}) {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column" },
+            flexDirection: { xs: "column", lg: "row" },
             alignItems: { xs: "center" },
             backgroundColor: theme.palette.custom.grayLight,
             py: { xs: 3 },
-            px: { xs: 2 },
+            px: { xs: 2, lg: 3 },
             boxShadow: 1,
-            height: "100%"
+            height: "100%",
+            justifyContent: { lg: "space-between" }
           }}
         >
           <CardMedia 
@@ -27,27 +28,35 @@ export default function CardSector({card}) {
               maxWidth: { xs: "72px" }
             }}
           />
-          <Typography
-            variant="h6"
-            component="h4"
-            gutterBottom
-            sx={{ 
-              color: theme.palette.text.secondary, 
-              margin: "8px 0",
-              textAlign: "center"
-            }}
-          >
-            {card.title}
-          </Typography>
-          <Typography
-            variant="body2"
-            component="p"
+          <Box 
             sx={{
-              textAlign: { xs: "center" }
+              display: { lg: "flex" },
+              flexDirection: { lg: "column" },
+              maxWidth: "240px",
             }}
           >
-            {card.text}
-          </Typography>
+            <Typography
+              variant="h6"
+              component="h4"
+              gutterBottom
+              sx={{ 
+                color: theme.palette.text.secondary, 
+                margin: "8px 0",
+                textAlign: "center"
+              }}
+            >
+              {card.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              component="p"
+              sx={{
+                textAlign: { xs: "center" }
+              }}
+            >
+              {card.text}
+            </Typography>
+          </Box>
         </Box>
       </Grid>
     </>
