@@ -66,6 +66,7 @@ let theme = createTheme({
     h6: {
       fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
       fontWeight: 400,
+      lineHeight: 1.3,
     },
     body1: {
       fontFamily: "'Optimal LT Std', serif",
@@ -118,6 +119,9 @@ theme = createTheme(theme, {
   typography: {
     h1: {
       ...theme.typography.h1,
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "44px"
+      },
       [theme.breakpoints.down("lg")]: {
         fontSize: "40px"
       },
@@ -127,8 +131,14 @@ theme = createTheme(theme, {
     },
     h3: {
       ...theme.typography.h3,
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "38px"
+      },
       [theme.breakpoints.down("lg")]: {
         fontSize: "36px"
+      },
+      [theme.breakpoints.between("sm", "md")]: {
+        fontSize: "32px"
       },
       [theme.breakpoints.down("sm")]: {
         fontSize: "30px"
