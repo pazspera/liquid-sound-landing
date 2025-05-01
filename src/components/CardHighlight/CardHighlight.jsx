@@ -42,6 +42,7 @@ export default function CardHighlight({card}) {
           <Typography
             sx={{ textAlign: "center" }}
             variant="body2"
+            component="p"
           >
             {card.text}
           </Typography>
