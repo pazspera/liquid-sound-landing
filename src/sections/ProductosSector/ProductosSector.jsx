@@ -40,13 +40,14 @@ export default function ProductosSector() {
   return (
     <>
       <Box className={styles.background}>
-        <Container maxWidth="lg" sx={{ py: theme.layout.sectionPadding }}>
+        <Container maxWidth="xl" sx={{ py: theme.layout.sectionPadding }}>
           <Grid container >
             <Grid 
-              size={{ xs: 12, lg: 4 }} 
+              size={{ xs: 12, lg: 5 }}
               sx={{ 
                 marginBottom: { xs: "36px", lg: "0" },
-                display: { lg: "flex" }
+                display: { lg: "flex" },
+                px: { lg: 6 }
               }}
             >
               <Box sx={{
@@ -55,16 +56,18 @@ export default function ProductosSector() {
                 pr: { lg: 3 },
                 display: { lg: "flex" },
                 flexDirection: { lg: "column"},
-                justifyContent: { lg: "center" }
+                justifyContent: { lg: "center" },
+                alignItems: { lg: "center" }
               }}>
                 <Typography 
-                  variant="h4"
+                  variant="h3"
                   component="h2"
                   gutterBottom
                   sx={{
                     padding: theme.layout.titlePadding,
                     color: theme.palette.text.secondary,
-                    textAlign: "center"
+                    textAlign: "center",
+                    maxWidth: { lg: "450px" }
                   }}
                 >
                   Productos diseñados para su sector
@@ -74,7 +77,7 @@ export default function ProductosSector() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid size={{ lg: 8 }}>
+            <Grid size={{ lg: 7 }}>
               <Grid container spacing={2} alignItems="stretch">  
                 {cards.map((card)=>(
                   <CardSector card={card} key={card.id} />

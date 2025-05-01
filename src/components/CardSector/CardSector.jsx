@@ -14,7 +14,7 @@ export default function CardSector({card}) {
             alignItems: { xs: "center" },
             backgroundColor: theme.palette.custom.grayLight,
             py: { xs: 3 },
-            px: { xs: 2, lg: 3 },
+            px: { xs: 2, lg: 5 },
             boxShadow: 1,
             height: "100%",
             justifyContent: { lg: "space-between" }
