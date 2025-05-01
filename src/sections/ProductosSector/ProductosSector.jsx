@@ -42,26 +42,33 @@ export default function ProductosSector() {
       <Box className={styles.background}>
         <Container maxWidth="lg" sx={{ py: theme.layout.sectionPadding }}>
           <Grid container>
-            <Grid size={{ xs: 12 }}>
-              <Typography 
-                variant="h3"
-                component="h2"
-                gutterBottom
-                sx={{
-                  padding: theme.layout.titlePadding,
-                  color: theme.palette.text.secondary,
-                  textAlign: "center"
-                }}
-              >
-                Productos diseñados para su sector
-              </Typography>
-              <Typography component="p" variant="body3" sx={{ textAlign: "center" }}>
-                Adaptamos nuestras soluciones a los estándares de cada industria para garantizar espacios seguros y libres de contaminación.
-              </Typography>
+            <Grid size={{ xs: 12 }} sx={{ marginBottom: { xs: "36px" }}}>
+              <Box sx={{
+                maxWidth: "650px",
+                margin: "0 auto"
+              }}>
+                <Typography 
+                  variant="h3"
+                  component="h2"
+                  gutterBottom
+                  sx={{
+                    padding: theme.layout.titlePadding,
+                    color: theme.palette.text.secondary,
+                    textAlign: "center"
+                  }}
+                >
+                  Productos diseñados para su sector
+                </Typography>
+                <Typography component="p" variant="body3" sx={{ textAlign: "center" }}>
+                  Adaptamos nuestras soluciones a los estándares de cada industria para garantizar espacios seguros y libres de contaminación.
+                </Typography>
+              </Box>
             </Grid>
-            {cards.map((card)=>(
-              <CardSector card={card} key={card.id} />
-            ))}
+            <Grid container spacing={2} alignItems="stretch">  
+              {cards.map((card)=>(
+                <CardSector card={card} key={card.id} />
+              ))}
+            </Grid>
           </Grid>
         </Container>
       </Box>
