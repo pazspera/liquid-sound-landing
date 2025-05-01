@@ -35,7 +35,7 @@ export default function CardHighlight({card}) {
             variant="h6"
             component="h3"
             gutterBottom
-            sx={{ color: theme.palette.text.secondary, marginTop: "8px", textAlign: "center" }}
+            sx={{ color: theme.palette.text.secondary, marginTop: "8px", marginBottom: "8px", textAlign: "center" }}
           >
             {card.title}
           </Typography>

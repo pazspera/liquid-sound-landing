@@ -50,6 +50,7 @@ export default function NuestrosProductos() {
                 flexDirection: { xs: "column", sm: "row"}, 
                 gap: 2, 
                 pt: { xs: 3, lg: 3  },
+                pl: { lg: 2 },
                 justifyContent: { sm: "center", md: "flex-start" }
               }}>
               <Button variant="contained" component="a" href="https://www.liquidsound.com.ar/" target="_blank" rel="noopener noreferrer">Ir a la tienda</Button>
