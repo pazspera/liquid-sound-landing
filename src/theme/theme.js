@@ -73,6 +73,9 @@ let theme = createTheme({
     body2: {
       fontFamily: "'Optimal LT Std', serif",
     },
+    body3: {
+      fontFamily: "'Optimal LT Std', serif",
+    },
     button: {
       fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
       letterSpacing: "2px",
@@ -115,20 +118,32 @@ theme = createTheme(theme, {
   typography: {
     h1: {
       ...theme.typography.h1,
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "36px"
-      },
       [theme.breakpoints.down("lg")]: {
         fontSize: "40px"
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "36px"
       }
     },
     h3: {
       ...theme.typography.h3,
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "30px"
-      },
       [theme.breakpoints.down("lg")]: {
         fontSize: "36px"
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "30px"
+      }
+    },
+    body3: {
+      ...theme.typography.body3,
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "20px"
+      },
+      [theme.breakpoints.between("md", "lg")]: {
+        fontSize: "18px"
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "16px"
       }
     }
   }

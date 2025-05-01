@@ -20,7 +20,7 @@ export default function Hero() {
               Soluciones integrales en higiene
             para entornos profesionales
             </Typography>
-            <Typography component="p">
+            <Typography component="p" variant="body3" gutterBottom>
               Productos certificados que facilitan ambientes limpios y protegidos, garantizando el cumplimiento normativo y la seguridad en espacios que requieren altos estándares de limpieza.
             </Typography>
             <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row"}, gap: 2, padding: "16px 0", alignItems: "left" }}>
