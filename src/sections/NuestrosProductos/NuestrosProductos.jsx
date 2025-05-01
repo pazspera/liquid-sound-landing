@@ -49,8 +49,8 @@ export default function NuestrosProductos() {
                 display: "flex",
                 flexDirection: { xs: "column", sm: "row"}, 
                 gap: 2, 
-                padding: "16px 0 16px 24px", 
-                alignItems: "left" 
+                pt: { xs: 3, lg: 3  },
+                justifyContent: { sm: "center", md: "flex-start" }
               }}>
               <Button variant="contained" component="a" href="https://www.liquidsound.com.ar/" target="_blank" rel="noopener noreferrer">Ir a la tienda</Button>
               <Button variant="text" href="#contacto" sx={{ color: theme.palette.common.white}}>Pedir cotización</Button>

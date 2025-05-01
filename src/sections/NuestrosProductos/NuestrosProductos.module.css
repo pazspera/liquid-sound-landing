@@ -2,13 +2,18 @@
   color: #FFFDF7;
 }
 
+.list {
+  padding-left: 8px;
+  list-style-position: inside;
+}
+
 .list>.listItem {
   margin-bottom: 6px;
 }
 
-/* .image {
-  background-image: url("/img/placeholder.png");
-} */
+@media(min-width: 900px) {
+  
+}
 
 @media(min-width: 1200px) {
   .gridContainer {
