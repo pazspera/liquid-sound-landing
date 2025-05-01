@@ -44,17 +44,21 @@ export default function ProductosSector() {
           <Grid container >
             <Grid 
               size={{ xs: 12, lg: 4 }} 
-              sx={{ marginBottom: { xs: "36px" } }}
+              sx={{ 
+                marginBottom: { xs: "36px", lg: "0" },
+                display: { lg: "flex" }
+              }}
             >
               <Box sx={{
                 maxWidth: "650px",
                 margin: "0 auto",
-                px: { lg: 3 },
+                pr: { lg: 3 },
                 display: { lg: "flex" },
                 flexDirection: { lg: "column"},
+                justifyContent: { lg: "center" }
               }}>
                 <Typography 
-                  variant="h3"
+                  variant="h4"
                   component="h2"
                   gutterBottom
                   sx={{
