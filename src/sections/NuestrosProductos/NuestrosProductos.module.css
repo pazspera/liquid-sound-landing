@@ -1,5 +1,6 @@
 .listItem {
   color: #FFFDF7;
+  font-size: 14px !important;
 }
 
 .list {
@@ -12,6 +13,10 @@
 }
 
 @media(min-width: 900px) {
+  .listItem {
+    font-size: 16px !important;
+  }
+
   .gridContainer {
     display: grid;
     grid-template-columns: 0.5fr repeat(5, 1fr) 0.5fr;
