@@ -41,11 +41,17 @@ export default function ProductosSector() {
     <>
       <Box className={styles.background}>
         <Container maxWidth="lg" sx={{ py: theme.layout.sectionPadding }}>
-          <Grid container>
-            <Grid size={{ xs: 12 }} sx={{ marginBottom: { xs: "36px" }}}>
+          <Grid container >
+            <Grid 
+              size={{ xs: 12, lg: 5 }} 
+              sx={{ marginBottom: { xs: "36px" } }}
+            >
               <Box sx={{
                 maxWidth: "650px",
-                margin: "0 auto"
+                margin: "0 auto",
+                px: { lg: 3 },
+                display: { lg: "flex" },
+                flexDirection: { lg: "column"},
               }}>
                 <Typography 
                   variant="h3"
@@ -64,10 +70,12 @@ export default function ProductosSector() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid container spacing={2} alignItems="stretch">  
-              {cards.map((card)=>(
-                <CardSector card={card} key={card.id} />
-              ))}
+            <Grid size={{ lg: 7 }}>
+              <Grid container spacing={2} alignItems="stretch">  
+                {cards.map((card)=>(
+                  <CardSector card={card} key={card.id} />
+                ))}
+              </Grid>
             </Grid>
           </Grid>
         </Container>
