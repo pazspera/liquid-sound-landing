@@ -27,7 +27,10 @@ export default function NuestrosProductos() {
             className={styles.text}
             sx={{
               backgroundColor: theme.palette.primary.main,
-              padding: "24px 24px"
+              padding: "24px 24px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-around"
             }}
           >
             <Typography 
