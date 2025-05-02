@@ -32,7 +32,7 @@ export default function CardSector({card}) {
             sx={{
               display: { lg: "flex" },
               flexDirection: { lg: "column" },
-              maxWidth: "240px",
+              maxWidth: { xs: "240px", md: "320px" },
             }}
           >
             <Typography
