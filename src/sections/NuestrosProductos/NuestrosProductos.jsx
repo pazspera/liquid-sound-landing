@@ -9,9 +9,10 @@ export default function NuestrosProductos() {
   return (
     <>
       <Container 
-        maxWidth="lg"
+        maxWidth="xl"
         sx={{
-          py: theme.layout.sectionPadding
+          pb: theme.layout.sectionPadding,
+          pt: "24px"
         }}
       >
         <Box className={styles.gridContainer}>
