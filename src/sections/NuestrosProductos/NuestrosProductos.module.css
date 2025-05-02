@@ -41,12 +41,17 @@
 @media(min-width: 1000px) {
   .gridContainer {
     display: grid;
+    max-width: 900px;
     grid-template-columns: 0.75fr repeat(5, 1fr) 0.75fr;
-    grid-template-rows: repeat(4, 0.75fr) 0.5fr;
+    grid-template-rows: repeat(3, 0.15fr) 0.1fr repeat(4, 0.15fr) 0.05fr;
+  }
+
+  .text {
+    grid-row: 6/10;
   }
 }
 
-@media(min-width: 1100px) {
+@media(min-width: 1200px) {
   .gridContainer {
     display: grid; 
     grid-template-columns: repeat(3, 0.5fr);
