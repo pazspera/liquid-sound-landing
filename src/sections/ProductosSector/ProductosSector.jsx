@@ -43,11 +43,11 @@ export default function ProductosSector() {
         <Container maxWidth="xl" sx={{ py: theme.layout.sectionPadding }}>
           <Grid container >
             <Grid 
-              size={{ xs: 12, lg: 5 }}
+              size={{ xs: 12, lg: 4, xl: 5 }}
               sx={{ 
                 marginBottom: { xs: "36px", lg: "0" },
                 display: { lg: "flex" },
-                px: { lg: 6 }
+                px: { lg: 2 }
               }}
             >
               <Box sx={{
@@ -77,7 +77,7 @@ export default function ProductosSector() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid size={{ lg: 7 }}>
+            <Grid size={{ lg: 8, xl: 7 }}>
               <Grid container spacing={2} alignItems="stretch">  
                 {cards.map((card)=>(
                   <CardSector card={card} key={card.id} />

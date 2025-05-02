@@ -13,11 +13,11 @@ export default function CardSector({card}) {
             flexDirection: { xs: "column", lg: "row" },
             alignItems: { xs: "center" },
             backgroundColor: theme.palette.custom.grayLight,
-            py: { xs: 3 },
-            px: { xs: 2, lg: 5 },
+            py: { xs: 2, xl: 3 },
+            px: { xs: 2, xl: 3 },
             boxShadow: 1,
             height: "100%",
-            justifyContent: { lg: "space-between" }
+            justifyContent: { lg: "space-between" },
           }}
         >
           <CardMedia 
@@ -25,14 +25,14 @@ export default function CardSector({card}) {
             src={card.imgSrc}
             alt={card.imgAlt}
             sx={{
-              maxWidth: { xs: "72px" }
+              maxWidth: { xs: "72px", lg: "80px" }
             }}
           />
           <Box 
             sx={{
               display: { lg: "flex" },
               flexDirection: { lg: "column" },
-              maxWidth: { xs: "240px", md: "320px" },
+              maxWidth: { xs: "240px", md: "85%", lg: "72%" },
             }}
           >
             <Typography
@@ -42,7 +42,7 @@ export default function CardSector({card}) {
               sx={{ 
                 color: theme.palette.text.secondary, 
                 margin: "8px 0",
-                textAlign: "center"
+                textAlign: { xs: "center", lg: "start" }
               }}
             >
               {card.title}
@@ -51,7 +51,7 @@ export default function CardSector({card}) {
               variant="body2"
               component="p"
               sx={{
-                textAlign: { xs: "center" }
+                textAlign: { xs: "center", lg: "start" }
               }}
             >
               {card.text}
