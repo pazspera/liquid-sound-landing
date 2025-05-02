@@ -22,7 +22,7 @@ export default function CardHighlight({card}) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          maxWidth: "350px",
+          maxWidth: { xs:"350px" , lg:"400px" },
           width: "100%",  
         }}>
           <CardMedia 
@@ -40,7 +40,13 @@ export default function CardHighlight({card}) {
             {card.title}
           </Typography>
           <Typography
-            sx={{ textAlign: "center" }}
+            sx={{ 
+              textAlign: "center",
+              fontSize: {
+                xs: theme.typography.body2.fontSize,
+                lg: theme.typography.body1.fontSize,
+              }
+             }}
             variant="body2"
             component="p"
           >
