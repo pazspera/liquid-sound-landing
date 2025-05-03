@@ -99,6 +99,7 @@ let theme = createTheme({
     sectionPadding: "48px",
     titlePadding: "0 0 16px 0",
     errorPadding: "8px 0",
+    footerPadding: "24px"
   },
   components: {
     MuiButton: {

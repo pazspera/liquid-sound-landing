@@ -13,10 +13,10 @@ export default function Footer() {
 
   return (
     <>
-      <Box sx={{ backgroundColor: theme.palette.background.footer, py: theme.layout.sectionPadding }}>
+      <Box sx={{ backgroundColor: theme.palette.background.footer, py: theme.layout.footerPadding }}>
         <Container maxWidth="xl">
           <Grid container>
-            <Grid size={{ xs: 12 }}>
+            <Grid size={{ xs: 12 }} sx={{ mb: 2, display: "flex", justifyContent: { xs: "center" } }}>
               <CardMedia 
                 component="img"
                 src="/img/logo-liquid-sound.png"
@@ -26,10 +26,10 @@ export default function Footer() {
             </Grid>
             <Grid size={{ xs: 12 }}>
                {/* Info */}
-              <Box>
+              <Box sx={{ mb: 3, display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 4 } }}>
                 {/* Teléfonos */}
                 <Box>
-                  <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                  <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }}>
                     <LocalPhoneIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                     <Typography 
                       component="p"
@@ -39,7 +39,7 @@ export default function Footer() {
                       011 5654-8438/011 4553-2891
                     </Typography>
                   </Box>
-                  <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                  <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1  }}>
                     <WhatsAppIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                     <Typography 
                       component="p"
@@ -52,7 +52,7 @@ export default function Footer() {
                 </Box>
                 {/* Links */}
                 <Box>
-                  <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                  <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1  }}>
                     <EmailIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                     <Typography 
                       component="a"
@@ -63,7 +63,7 @@ export default function Footer() {
                       ventas@liquidsound.com.ar
                     </Typography>
                   </Box>
-                  <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                  <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1  }}>
                     <StoreIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                     <Typography 
                       component="a"
@@ -79,7 +79,7 @@ export default function Footer() {
                 </Box>
               </Box>
               {/* Iconos redes */}
-              <Box>
+              <Box sx={{ my: 2, display: "flex", gap: 2, alignItems: "center", justifyContent: "center" }}>
                 <Box
                   component="a"
                   href="https://www.instagram.com/liquidsoundar/"
@@ -107,18 +107,18 @@ export default function Footer() {
               </Box>
             </Grid>
             <Grid size={{ xs: 12 }}>
-              <Box>
+              <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 3 }, justifyContent:{ xs:"center" }, alignItems: { xs: "center", } }}>
                 <Typography
                   component="p"
                   variant="body1"
-                  sx={{ color: theme.palette.primary.main }}
+                  sx={{ color: theme.palette.primary.main, mb: 1 }}
                 >
                   Políticas de privacidad
                 </Typography>
                 <Typography
                   component="p"
                   variant="body1"
-                  sx={{ color: theme.palette.primary.main }}
+                  sx={{ color: theme.palette.primary.main, mb: 1 }}
                 >
                   Términos de uso
                 </Typography>
