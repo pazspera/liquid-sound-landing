@@ -43,11 +43,17 @@ export default function NuestrosClientes() {
                     pauseOnFocus: true,
                   },
                   breakpoints: {
-                    300: {
-                      perPage: 1
+                    1500: {
+                      perPage: 4,
                     },
-                    400: {
-                      perPage: 1
+                    1200: {
+                      perPage: 3,
+                    },
+                    600: {
+                      perPage: 2,
+                    },
+                    450: {
+                      perPage: 1,
                     }
                   }
                 }}
