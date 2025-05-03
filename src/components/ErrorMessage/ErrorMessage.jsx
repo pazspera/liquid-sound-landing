@@ -8,7 +8,9 @@ export default function ErrorMessage({message}) {
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", color: theme.palette.warning.main, padding: theme.layout.errorPadding }}>
-        <WarningAmberIcon sx={{ fontSize: 20, mr: 0.5}} />                   <Typography variant="body2" color="warning">                        {message}
+        <WarningAmberIcon sx={{ fontSize: 20, mr: 0.5}} /> 
+        <Typography variant="body2" color="warning">
+            {message}
         </Typography>
       </Box>
     </>
