@@ -3,6 +3,7 @@ import { Container, Grid, Typography, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
+
 export default function NuestrosClientes() {
   const theme = useTheme();
 
