@@ -8,8 +8,8 @@ export default function QuienesSomos() {
     <>
       <Container maxWidth="xl" sx={{ py: theme.layout.sectionPadding}}>
         <Grid container spacing={2} alignItem="stretch">
-          <Grid size={{ xs: 12, md: 7, lg: 7 }} sx={{ display: "flex", border: "1px solid red", flexDirection: "column" }}>
-            <Box sx={{ pr: { lg: 8 }, flex: 1 }}>
+          <Grid size={{ xs: 12, md: 7, lg: 7 }} sx={{ display: "flex", flexDirection: "column", alignSelf: "center"  }} alignItems="stretch">
+            <Box sx={{ pr: { lg: 8 }, flex: 1}}>
               <Typography variant="h3" component="h2" gutterBottom sx={{ padding: theme.layout.titlePadding, color: theme.palette.text.secondary, textAlign: "center" }}>
                 ¿Quiénes somos?
               </Typography>
@@ -29,7 +29,7 @@ export default function QuienesSomos() {
               </Typography>
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 5, lg: 5 }} sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", border: "1px solid red" }}>
+          <Grid size={{ xs: 12, md: 5, lg: 5 }} sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%",  alignSelf: "center" }}>
               <CardMedia 
                 component="img"
                 srcSet={
