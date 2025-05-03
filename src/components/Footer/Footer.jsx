@@ -24,7 +24,7 @@ export default function Footer() {
             </Grid>
             <Grid size={{ xs: 12 }}>
               {/* Info */}
-              <Box sx={{ display: { lg: "flex" }, justifyContent: { lg: "space-between"} }}>
+              <Box sx={{ display: { lg: "flex" }, justifyContent: { lg: "space-between" } }}>
                 <Box sx={{ mb: 3, display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 4 }, justifyContent: { md: "center", lg: "flex-start" } }}>
                   {/* Teléfonos */}
                   <Box>
@@ -38,7 +38,7 @@ export default function Footer() {
                         011 5654-8438/011 4553-2891
                       </Typography>
                     </Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }}>
+                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }} component="a" href="https://wa.me/5491156548438" target="_blank" rel="noopener noreferrer">
                       <WhatsAppIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                       <Typography
                         component="p"
@@ -51,25 +51,25 @@ export default function Footer() {
                   </Box>
                   {/* Links */}
                   <Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }}>
+                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }} component="a"
+                      variant="body1"
+                      href="mailto:ventas@liquidsound.com.ar">
                       <EmailIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                       <Typography
-                        component="a"
-                        variant="body1"
-                        href="mailto:ventas@liquidsound.com.ar"
+
                         sx={{ color: theme.palette.primary.main }}
                       >
                         ventas@liquidsound.com.ar
                       </Typography>
                     </Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }}>
+                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }} component="a"
+                      variant="body1"
+                      href="https://www.liquidsound.com.ar/"
+                      target="_blank"
+                      rel="noopener noreferrer">
                       <StoreIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                       <Typography
-                        component="a"
-                        variant="body1"
-                        href="https://www.liquidsound.com.ar/"
-                        target="_blank"
-                        rel="noopener noreferrer"
+
                         sx={{ color: theme.palette.primary.main }}
                       >
                         ¡Visite nuestra tienda!
