@@ -16,7 +16,7 @@ export default function Footer() {
       <Box sx={{ backgroundColor: theme.palette.background.footer, py: theme.layout.footerPadding }}>
         <Container maxWidth="xl">
           <Grid container>
-            <Grid size={{ xs: 12 }} sx={{ mb: 2, display: "flex", justifyContent: { xs: "center" } }}>
+            <Grid size={{ xs: 12 }} sx={{ mb: 2, display: "flex", justifyContent: { xs: "center", lg: "flex-start" } }}>
               <CardMedia 
                 component="img"
                 src="/img/logo-liquid-sound.png"
@@ -26,7 +26,7 @@ export default function Footer() {
             </Grid>
             <Grid size={{ xs: 12 }}>
                {/* Info */}
-              <Box sx={{ mb: 3, display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 4 } }}>
+              <Box sx={{ mb: 3, display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 4 }, justifyContent: { md: "center", lg: "flex-start" } }}>
                 {/* Teléfonos */}
                 <Box>
                   <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }}>
@@ -107,7 +107,7 @@ export default function Footer() {
               </Box>
             </Grid>
             <Grid size={{ xs: 12 }}>
-              <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 3 }, justifyContent:{ xs:"center" }, alignItems: { xs: "center", } }}>
+              <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 3 }, justifyContent:{ xs:"center", lg: "flex-start" }, alignItems: { xs: "center" } }}>
                 <Typography
                   component="p"
                   variant="body1"
