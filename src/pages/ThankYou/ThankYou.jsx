@@ -5,7 +5,7 @@ import NoticeSection from "../../components/NoticeSection/NoticeSection";
 
 export default function ThankYou() {
   const theme = useTheme();
-  useDocumentTitle("Gracias por contactarnos - Liquid Sound"); 
+  useDocumentTitle("¡Gracias por contactarnos! - Liquid Sound"); 
 
   return (
     <>
