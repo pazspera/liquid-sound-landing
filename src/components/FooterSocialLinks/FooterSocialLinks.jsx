@@ -15,6 +15,7 @@ export default function FooterSocialLinks() {
           href="https://www.instagram.com/liquidsoundar/"
           target="_blank"
           rel="noopener noreferrer"
+          sx={{ transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }}}}
         >
           <InstagramIcon sx={{ fontSize: 40, mr: 0.5, color: theme.palette.primary.main }} />
         </Box>
@@ -23,6 +24,7 @@ export default function FooterSocialLinks() {
           href="https://www.facebook.com/LiquidSoundAR"
           target="_blank"
           rel="noopener noreferrer"
+          sx={{ transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }}}}
         >
           <FacebookIcon sx={{ fontSize: 40, mr: 0.5, color: theme.palette.primary.main }} />
         </Box>
@@ -31,6 +33,7 @@ export default function FooterSocialLinks() {
           href="https://www.twitter.com/LiquidSoundAR"
           target="_blank"
           rel="noopener noreferrer"
+          sx={{ transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }}}}
         >
           <XIcon sx={{ fontSize: 40, mr: 0.5, color: theme.palette.primary.main }} />
         </Box>
