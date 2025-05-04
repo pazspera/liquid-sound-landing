@@ -4,7 +4,7 @@ import { AppBar, Box, Container, IconButton, List, ListItem, ListItemText, Swipe
 
 export default function Navbar() {
   const theme = useTheme();
-  const isMobile = useMediaQuery((theme)=> theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery((theme)=> theme.breakpoints.down("md"));
 
   const MobileNav = () => {
     return (

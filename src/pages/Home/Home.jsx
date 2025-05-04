@@ -6,12 +6,14 @@ import QuienesSomos from "../../sections/QuienesSomos/QuienesSomos";
 import NuestrosClientes from "../../sections/NuestrosClientes/NuestrosClientes";
 import Contacto from "../../sections/Contacto/Contacto";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
+import { Toolbar } from "@mui/material";
 
 export default function Home() {
   useDocumentTitle("Liquid Sound");
   
   return (
     <>
+      <Toolbar/>
       <Hero></Hero>
       <PorQueElegirnos></PorQueElegirnos>
       <NuestrosProductos></NuestrosProductos>
