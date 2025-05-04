@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
-import { AppBar, Box, Container, IconButton, List, ListItem, ListItemText, SwipeableDrawer, Toolbar, Typography, useMediaQuery } from "@mui/material";
+import { AppBar, Box, Container, IconButton, List, ListItem, ListItemText, SwipeableDrawer, Toolbar, Typography, useMediaQuery, CardMedia } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const theme = useTheme();
@@ -21,32 +22,32 @@ export default function Navbar() {
           open={openMobileMenu}
           onClose={closeDrawer}
           onOpen={openDrawer}
-          PaperProps={{ sx: { backgroundColor: theme.palette.common.white } }}
+          PaperProps={{ sx: { backgroundColor: theme.palette.common.white, minWidth: "200px" } }}
         >
           <Box onClick={closeDrawer} onKeyDown={closeDrawer}>
             <List>
               <ListItem>
-                <Typography component="a" href="#nuestros-productos" style={({ isActive }) => ({ color: isActive ? theme.palette.primary.main : theme.palette.text.hoverLinks })}>
-                  <ListItemText primary="Productos"></ListItemText>
+                <Typography component="a" variant="h6" href="#nuestros-productos" sx={{ color: theme.palette.primary.main, textDecoration: "none" }}>
+                  Productos
                 </Typography>
               </ListItem>
               <ListItem>
-                <Typography component="a" href="https://liquidsound-ar.blogspot.com/" target="_blank" rel="noopener noreferrer" style={({ isActive }) => ({ color: isActive ? theme.palette.primary.main : theme.palette.text.hoverLinks })}>
-                  <ListItemText primary="Blog"></ListItemText>
+                <Typography component="a" variant="h6" href="https://liquidsound-ar.blogspot.com/" target="_blank" rel="noopener noreferrer" sx={{ color: theme.palette.primary.main, textDecoration: "none" }}>
+                  Blog
                 </Typography>
               </ListItem>
               <ListItem>
-                <Typography component="a" href="#contacto" style={({ isActive }) => ({ color: isActive ? theme.palette.primary.main : theme.palette.text.hoverLinks })}>
-                  <ListItemText primary="Contacto"></ListItemText>
+                <Typography component="a"  variant="h6" href="#contacto" sx={{ color: theme.palette.primary.main, textDecoration: "none" }}>
+                  Contacto
                 </Typography>
               </ListItem>
             </List>
           </Box>
         </SwipeableDrawer>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <NavLink to="/" style={({ isActive }) => ({ color: isActive ? theme.palette.primary.main : theme.palette.text.hoverLinks })}>
-            <Typography variant="subtitle1" component="span">
-              <p>Logo</p>
+        <Box sx={{ display: "flex", justifyContent: "space-between", py: 1 }}>
+          <NavLink to="/">
+            <Typography component="span">
+              <CardMedia component="img" src="/img/logo-liquid-sound.png" alt="Logo Liquid Sound" sx={{ maxWidth: "100px" }} />
             </Typography>
           </NavLink>
           <IconButton onClick={openDrawer} >
@@ -67,11 +68,13 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar>
-        <Container maxWidth="lg" sx={{ backgroundColor: theme.palette.common.white}}>
-          {isMobile ? <MobileNav /> : <DesktopNav />}
-        </Container>
-      </AppBar>
+      <Box sx={{ backgroundColor: theme.palette.common.white }}>
+        <AppBar sx={{ backgroundColor: theme.palette.common.white }}>
+          <Container maxWidth="lg" sx={{ backgroundColor: theme.palette.common.white}}>
+            {isMobile ? <MobileNav /> : <DesktopNav />}
+          </Container>
+        </AppBar>
+      </Box>
     </>
   )
 }
