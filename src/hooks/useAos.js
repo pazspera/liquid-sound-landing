@@ -10,9 +10,8 @@ const useAos = () => {
   useEffect(() => {
     if (isDesktop) {
       AOS.init({
-        duration: 100,
         once: true,
-        easing: "ease-in",
+        easing: "ease-in-out",
       });
     }
 
@@ -21,6 +20,7 @@ const useAos = () => {
     }
   }, [isDesktop]);
 
+  return isDesktop;
 }
 
 export default useAos;

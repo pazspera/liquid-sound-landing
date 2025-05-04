@@ -1,9 +1,10 @@
 import { useTheme } from "@mui/material/styles";
 import { Grid, Typography, Box, CardMedia } from "@mui/material";
-
+import useAos from "../../hooks/useAos";
 
 export default function CardHighlight({card}) {
   const theme = useTheme();
+  const isDesktop = useAos();
 
   return (
     <>
@@ -17,6 +18,8 @@ export default function CardHighlight({card}) {
           padding: "0 12px",
           marginBottom: { xs: "36px", lg: "0" }
         }}
+        data-aos={isDesktop ? "fade-up" : undefined}
+        data-aos-delay={isDesktop ? card.animationDelay : undefined}
       >
         <Box sx={{
           display: "flex",

@@ -12,7 +12,8 @@ export default function  PorQueElegirnos() {
       text: "Nuestros productos ayudan a reducir costos operativos al minimizar desperdicios y optimizar el uso de recursos en procesos de limpieza.",
       imgSrc: "/img/reduccion-costos.svg",
       imgAlt: "Mano depositando monedas en un frasco",
-      lastCard: false
+      lastCard: false,
+      animationDelay: 0
     },
     {
       id: 2,
@@ -20,7 +21,8 @@ export default function  PorQueElegirnos() {
       text: "Adaptamos pedidos a las necesidades específicas de cada cliente, permitiendo soluciones personalizadas que se ajustan a demandas variables del mercado.",
       imgSrc: "/img/flexibilidad-pedidos.svg",
       imgAlt: "Carrito transportando paquetes",
-      lastCard: false
+      lastCard: false,
+      animationDelay: 200
     },
     {
       id: 3,
@@ -28,7 +30,8 @@ export default function  PorQueElegirnos() {
       text: "Garantizamos el cumplimiento de normativas vigentes, proporcionando productos que facilitan auditorías y reducen riesgos operativos en entornos altamente regulados.",
       imgSrc: "/img/cumplimiento-normativo.svg",
       imgAlt: "Documento con sello de aprobación",
-      lastCard: true
+      lastCard: true,
+      animationDelay: 400
     }
   ]
 
