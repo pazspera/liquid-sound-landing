@@ -1,12 +1,15 @@
 import { useTheme } from "@mui/material/styles";
 import { Grid, Box, CardMedia, Typography } from "@mui/material";
+import useAos from "../../hooks/useAos";
 
 export default function CardSector({card}) {
   const theme = useTheme();
+  const isDesktop = useAos();
 
   return (
     <>
-      <Grid size={{ xs: 12, sm: 6 }}>
+      <Grid size={{ xs: 12,
+         sm: 6 }}>
         <Box
           sx={{
             display: "flex",
@@ -19,6 +22,8 @@ export default function CardSector({card}) {
             height: "100%",
             justifyContent: { lg: "space-between" },
           }}
+          data-aos={isDesktop ? "fade-up" : undefined}
+          data-aos-delay={isDesktop ? card.animationDelay : undefined}
         >
           <CardMedia 
             component="img"

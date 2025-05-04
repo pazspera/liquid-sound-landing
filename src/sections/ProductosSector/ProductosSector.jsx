@@ -12,28 +12,32 @@ export default function ProductosSector() {
       title: "Medicina y laboratorios",
       text: "Cumplimos con normativas sanitarias para garantizar la asepsia en clínicas, hospitales y laboratorios.",
       imgSrc: "/img/medicina-laboratorios.svg",
-      imgAlt: "Ilustración de un hospital"
+      imgAlt: "Ilustración de un hospital",
+      animationDelay: 0
     },
     {
       id: 2,
       title: "Gastronomía y alimenticia",
       text: "Desinfección efectiva para eliminar riesgos en la producción y manipulación de alimentos.",
       imgSrc: "/img/gastronomia-alimenticia.svg",
-      imgAlt: "Ilustración de una tabla de picar con vegetales"
+      imgAlt: "Ilustración de una tabla de picar con vegetales",
+      animationDelay: 150
     },
     {
       id: 3,
       title: "Cosmética y manicuría",
       text: "Soluciones de limpieza adaptadas para preservar la calidad en entornos estéticos y de cuidado personal.",
       imgSrc: "/img/cosmetica-manicuria.svg",
-      imgAlt: "Ilustración de artículos de cuidado personal"
+      imgAlt: "Ilustración de artículos de cuidado personal",
+      animationDelay: 300
     },
     {
       id: 4,
       title: "Tattoo y body art",
       text: "Productos diseñados para prevenir infecciones y mantener un entorno seguro para artistas y clientes",
       imgSrc: "/img/tatoo-body-art.svg",
-      imgAlt: "Ilustración de un brazo siendo tatuado"
+      imgAlt: "Ilustración de un brazo siendo tatuado",
+      animationDelay: 450
     }
   ]
 
