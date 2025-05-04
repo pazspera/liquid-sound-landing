@@ -14,6 +14,7 @@ export default function NuestrosProductos() {
           pb: theme.layout.sectionPadding,
           pt: "24px"
         }}
+        id="nuestros-productos"
       >
         <Box className={styles.gridContainer}>
           <CardMedia
