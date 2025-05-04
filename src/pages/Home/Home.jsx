@@ -6,6 +6,7 @@ import QuienesSomos from "../../sections/QuienesSomos/QuienesSomos";
 import NuestrosClientes from "../../sections/NuestrosClientes/NuestrosClientes";
 import Contacto from "../../sections/Contacto/Contacto";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
+import WhatsappWidget from "../../components/WhatsappWidget/WhatsappWidget";
 
 export default function Home() {
   useDocumentTitle("Liquid Sound | Higiene y desinfección profesional");
@@ -19,6 +20,7 @@ export default function Home() {
       <QuienesSomos></QuienesSomos>
       <NuestrosClientes></NuestrosClientes>
       <Contacto></Contacto>
+      <WhatsappWidget />
     </>
   )
 }
