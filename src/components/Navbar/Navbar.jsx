@@ -17,18 +17,13 @@ export default function Navbar() {
     return (
       <>
         <SwipeableDrawer
+          anchor="right"
           open={openMobileMenu}
           onClose={closeDrawer}
           onOpen={openDrawer}
           PaperProps={{ sx: { backgroundColor: theme.palette.common.white } }}
         >
           <Box onClick={closeDrawer} onKeyDown={closeDrawer}>
-            <NavLink to="/" style={({ isActive }) => ({ color: isActive ? theme.palette.primary.main : theme.palette.text.hoverLinks })}>
-              <Typography variant="subtitle1" component="span">
-                <p>Logo</p>
-              </Typography>
-            </NavLink>
-
             <List>
               <ListItem>
                 <Typography component="a" href="#nuestros-productos" style={({ isActive }) => ({ color: isActive ? theme.palette.primary.main : theme.palette.text.hoverLinks })}>
@@ -48,7 +43,12 @@ export default function Navbar() {
             </List>
           </Box>
         </SwipeableDrawer>
-        <Box>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <NavLink to="/" style={({ isActive }) => ({ color: isActive ? theme.palette.primary.main : theme.palette.text.hoverLinks })}>
+            <Typography variant="subtitle1" component="span">
+              <p>Logo</p>
+            </Typography>
+          </NavLink>
           <IconButton onClick={openDrawer} >
             <MenuIcon />
           </IconButton>
