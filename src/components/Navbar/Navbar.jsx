@@ -61,7 +61,24 @@ export default function Navbar() {
   const DesktopNav = () => {
     return (
       <>
-        <p>DesktopNav</p>
+        <Toolbar elevation={0} sx={{ display: "flex", justifyContent: "space-between" }}>
+          <NavLink to="/">
+            <Typography component="span">
+              <CardMedia component="img" src="/img/logo-liquid-sound.png" alt="Logo Liquid Sound" sx={{ maxWidth: "100px" }} />
+            </Typography>
+          </NavLink>
+          <Box sx={{ display: "flex", gap: { md: 1, lg: 3 } }}>
+            <Typography component="a" variant="h6" href="#nuestros-productos" sx={{ color: theme.palette.primary.main, textDecoration: "none" }}>
+              Productos
+            </Typography>
+            <Typography component="a" variant="h6" href="https://liquidsound-ar.blogspot.com/" target="_blank" rel="noopener noreferrer" sx={{ color: theme.palette.primary.main, textDecoration: "none" }}>
+              Blog
+            </Typography>
+            <Typography component="a"  variant="h6" href="#contacto" sx={{ color: theme.palette.primary.main, textDecoration: "none" }}>
+              Contacto
+            </Typography>
+          </Box>
+        </Toolbar>
       </>
     )
   }
@@ -69,7 +86,7 @@ export default function Navbar() {
   return (
     <>
       <Box sx={{ backgroundColor: theme.palette.common.white }}>
-        <Paper component="header" elevation={1} sx={{ backgroundColor: theme.palette.common.white }}>
+        <Paper elevation={1} component="header" sx={{ backgroundColor: theme.palette.common.white }}>
           <Container maxWidth="lg" sx={{ backgroundColor: theme.palette.common.white}}>
             {isMobile ? <MobileNav /> : <DesktopNav />}
           </Container>
