@@ -28,8 +28,8 @@ export default function Footer() {
                 <Box sx={{ mb: 3, display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 4 }, justifyContent: { md: "center", lg: "flex-start" } }}>
                   {/* Teléfonos */}
                   <Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }}>
-                      <LocalPhoneIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
+                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1, color: theme.palette.primary.main, transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }} }}>
+                      <LocalPhoneIcon sx={{ fontSize: 28, mr: 0.5 }} />
                       <Typography
                         component="p"
                         variant="body1"
@@ -38,7 +38,7 @@ export default function Footer() {
                         011 5654-8438/011 4553-2891
                       </Typography>
                     </Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }} component="a" href="https://wa.me/5491156548438" target="_blank" rel="noopener noreferrer">
+                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1, textDecoration: "none", transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }} }} component="a" href="https://wa.me/5491156548438" target="_blank" rel="noopener noreferrer">
                       <WhatsAppIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                       <Typography
                         component="p"
@@ -51,7 +51,7 @@ export default function Footer() {
                   </Box>
                   {/* Links */}
                   <Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }} component="a"
+                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1, transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }} }} component="a"
                       variant="body1"
                       href="mailto:ventas@liquidsound.com.ar">
                       <EmailIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
@@ -62,7 +62,8 @@ export default function Footer() {
                         ventas@liquidsound.com.ar
                       </Typography>
                     </Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1 }} component="a"
+                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1, transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }} }} 
+                      component="a"
                       variant="body1"
                       href="https://www.liquidsound.com.ar/"
                       target="_blank"

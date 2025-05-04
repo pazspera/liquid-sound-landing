@@ -16,7 +16,7 @@ let theme = createTheme({
       primary: "#161413",
       secondary: (theme) => theme.palette.primary.main,
       white: (theme) => theme.palette.common.white,
-      hoverLinks: "#489399"
+      hoverLinks: "#346B6F"
     },
     common: {
       black: "#161413",
