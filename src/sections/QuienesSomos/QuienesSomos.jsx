@@ -1,8 +1,10 @@
 import { useTheme } from "@mui/material/styles";
 import { Container, Grid, Typography, Box, CardMedia } from "@mui/material";
+import useAos from "../../hooks/useAos";
 
 export default function QuienesSomos() {
   const theme = useTheme();
+  const isDesktop = useAos();
 
   return (
     <>
@@ -29,7 +31,11 @@ export default function QuienesSomos() {
               </Typography>
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 5, lg: 5 }} sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%",  alignSelf: "center" }}>
+          <Grid 
+            size={{ xs: 12, md: 5, lg: 5 }} 
+            sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%",  alignSelf: "center" }}
+            data-aos={isDesktop ? "fade-left" : undefined}
+          >
               <CardMedia 
                 component="img"
                 srcSet={
