@@ -19,7 +19,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path="/" element={ <Home/> }></Route>
-            <Route path="/thank-you" element={ <ThankYou/>}></Route>
+            <Route path="/gracias-por-contactarnos" element={ <ThankYou/> }></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
