@@ -8,7 +8,7 @@ import Contacto from "../../sections/Contacto/Contacto";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 
 export default function Home() {
-  useDocumentTitle("Liquid Sound");
+  useDocumentTitle("Liquid Sound | Higiene y desinfección profesional");
   
   return (
     <>

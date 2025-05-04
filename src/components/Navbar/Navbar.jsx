@@ -64,7 +64,7 @@ export default function Navbar() {
         <Toolbar elevation={0} sx={{ display: "flex", justifyContent: "space-between" }}>
           <NavLink to="/">
             <Typography component="span">
-              <CardMedia component="img" src="/img/logo-liquid-sound.png" alt="Logo Liquid Sound" sx={{ maxWidth: "100px" }} />
+              <CardMedia component="img" src="/img/logo-liquid-sound.png" alt="Logo Liquid Sound" sx={{ maxWidth: { xs: "100px", lg: "120px" } }} />
             </Typography>
           </NavLink>
           <Box sx={{ display: "flex", gap: { md: 1, lg: 3 } }}>
