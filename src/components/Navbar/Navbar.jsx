@@ -67,7 +67,7 @@ export default function Navbar() {
               <CardMedia component="img" src="/img/logo-liquid-sound.png" alt="Logo Liquid Sound" sx={{ maxWidth: { xs: "100px", lg: "120px" } }} />
             </Typography>
           </NavLink>
-          <Box sx={{ display: "flex", gap: { md: 1, lg: 3 } }}>
+          <Box sx={{ display: "flex", gap: { md: 2, lg: 3 } }}>
             <Typography component="a" variant="h6" href="#nuestros-productos" sx={{ color: theme.palette.primary.main, textDecoration: "none" }}>
               Productos
             </Typography>
