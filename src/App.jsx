@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import ThankYou from "./pages/ThankYou/ThankYou";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import NoticeSection from "./components/NoticeSection/NoticeSection";
 
 function App() {
 
@@ -20,6 +21,13 @@ function App() {
           <Routes>
             <Route exact path="/" element={ <Home/> }></Route>
             <Route path="/gracias-por-contactarnos" element={ <ThankYou/> }></Route>
+            <Route path="*" element={
+              <NoticeSection
+                title="404 - Página no encontrada"
+                message="No pudimos encontrar la página que está buscando."
+                secondaryMessage="Es posible que el enlace esté desactualizado o que la página haya sido movida."
+              />
+            }></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
