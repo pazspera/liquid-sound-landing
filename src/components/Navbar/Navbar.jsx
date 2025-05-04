@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
-import { AppBar, Box, Container, IconButton, List, ListItem, ListItemText, SwipeableDrawer, Toolbar, Typography, useMediaQuery, CardMedia } from "@mui/material";
+import { AppBar, Box, Container, IconButton, List, ListItem, ListItemText, SwipeableDrawer, Toolbar, Typography, useMediaQuery, CardMedia, Paper } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import styles from "./Navbar.module.css";
@@ -69,11 +69,11 @@ export default function Navbar() {
   return (
     <>
       <Box sx={{ backgroundColor: theme.palette.common.white }}>
-        <AppBar sx={{ backgroundColor: theme.palette.common.white }}>
+        <Paper component="header" elevation={1} sx={{ backgroundColor: theme.palette.common.white }}>
           <Container maxWidth="lg" sx={{ backgroundColor: theme.palette.common.white}}>
             {isMobile ? <MobileNav /> : <DesktopNav />}
           </Container>
-        </AppBar>
+        </Paper>
       </Box>
     </>
   )
