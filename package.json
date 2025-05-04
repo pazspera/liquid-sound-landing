@@ -16,6 +16,7 @@
     "@mui/material": "^7.0.2",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "aos": "^2.3.4",
     "dotenv": "^16.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
