@@ -37,7 +37,7 @@ export default function CardSector({card}) {
             sx={{
               display: { lg: "flex" },
               flexDirection: { lg: "column" },
-              maxWidth: { xs: "240px", md: "85%", lg: "72%" },
+              maxWidth: { xs: "300px", md: "85%", lg: "72%" },
             }}
           >
             <Typography
