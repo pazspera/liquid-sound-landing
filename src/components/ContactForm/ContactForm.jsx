@@ -2,14 +2,17 @@ import { Grid, TextField, Checkbox, FormControlLabel, Button, Typography, Box } 
 import { useForm } from "react-hook-form";
 import { useTheme } from "@mui/material/styles";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import { useNavigate } from "react-router-dom";
 
 export default function ContactForm() {
   const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
   const theme = useTheme();
+  const navigate = useNavigate();
 
   console.log(errors);
 
   const googleSheetEndpoint = "https://script.google.com/macros/s/AKfycbxBgFCoa5PhCLVFiNYs-g8MV25ZdFrz81xCv52SfU2GfpHIH321geYyi2xPJd8EIi8yGw/exec";
+  const emailEndpoint = "/.netlify/functions/contact";
 
   const sendToGoogleSheet = (formEl) => {
     const formData = new FormData(formEl);
@@ -26,10 +29,36 @@ export default function ContactForm() {
       } )
   }
 
+  const sendEmail = async (data) => {
+    const res = await fetch(emailEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data);
+    })
+    
+    if(!res.ok) {
+      const text = await res.text();
+      throw new Error(`Error al enviar correo: ${res.status}: ${text}`)
+    }
+    
+    return res.json();
+  }
+
   const handleForm = async (data, event) => {
     event.preventDefault();
-    console.log(data);
+
     sendToGoogleSheet(event.target);
+
+    const fecha = new Date().toLocaleDateString();
+    const emailData = { ...data, fecha };
+
+    try {
+      await sendEmail(emailData);
+      reset();
+      navigate("/gracias-por-contactarnos");
+    } catch (err) {
+      console.log("Error mandando mail",err);
+    }
 
 /*     try {
       const res = await fetch("/.netlify/functions/contact", {
