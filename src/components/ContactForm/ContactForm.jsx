@@ -13,7 +13,10 @@ export default function ContactForm() {
 
   const sendToGoogleSheet = (formEl) => {
     const formData = new FormData(formEl);
+    const checked = formEl.querySelector('[name="newsletter"]').checked;
+    formData.set("newsletter", checked ? "Sí" : "No");
     formData.set("fecha", new Date().toLocaleDateString());
+
     fetch(googleSheetEndpoint, {
       method: "POST",
       body: formData
