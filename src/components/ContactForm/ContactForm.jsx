@@ -9,10 +9,26 @@ export default function ContactForm() {
 
   console.log(errors);
 
-  const handleForm = async (data) => {
-    console.log(data);
+  const googleSheetEndpoint = "https://script.google.com/macros/s/AKfycbxBgFCoa5PhCLVFiNYs-g8MV25ZdFrz81xCv52SfU2GfpHIH321geYyi2xPJd8EIi8yGw/exec";
 
-    try {
+  const sendToGoogleSheet = (formEl) => {
+    const formData = new FormData(formEl);
+    formData.set("fecha", new Date().toLocaleDateString());
+    fetch(googleSheetEndpoint, {
+      method: "POST",
+      body: formData
+    })
+      .catch((err) => {
+        console.log("Sheet Error:", err);
+      } )
+  }
+
+  const handleForm = async (data, event) => {
+    event.preventDefault();
+    console.log(data);
+    sendToGoogleSheet(event.target);
+
+/*     try {
       const res = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -25,7 +41,7 @@ export default function ContactForm() {
     } catch (error) {
       console.log("error");
       console.log(error);
-    }
+    } */
 
   }
 
