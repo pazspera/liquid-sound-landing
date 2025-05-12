@@ -10,6 +10,7 @@ import ThankYou from "./pages/ThankYou/ThankYou";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import NoticeSection from "./components/NoticeSection/NoticeSection";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <BrowserRouter>
+          <ScrollToTop/>
           <Navbar />
           <Routes>
             <Route exact path="/" element={ <Home/> }></Route>
