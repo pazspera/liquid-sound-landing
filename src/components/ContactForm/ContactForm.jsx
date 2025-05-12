@@ -1,13 +1,15 @@
-import { Grid, TextField, Checkbox, FormControlLabel, Button, Typography, Box } from "@mui/material";
+import { Grid, TextField, Checkbox, FormControlLabel, Button, Typography, Box, CircularProgress } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useTheme } from "@mui/material/styles";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function ContactForm() {
   const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
   const theme = useTheme();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   console.log(errors);
 
@@ -46,6 +48,7 @@ export default function ContactForm() {
 
   const handleForm = async (data, event) => {
     event.preventDefault();
+    setLoading(true);
 
     sendToGoogleSheet(event.target);
 
@@ -54,12 +57,13 @@ export default function ContactForm() {
 
     try {
       await sendEmail(emailData);
+      setLoading(false);
       navigate("/gracias-por-contactarnos");
     } catch (err) {
       console.log("Error mandando mail",err);
     }
 
-/*     try {
+/*   try {
       const res = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -171,7 +175,9 @@ export default function ContactForm() {
             />
           </Grid>
           <Grid item size={{ xs: 12, md: 10, lg: 6 }} offset={{ xs: 0, md: 1, lg: 3 }}>
-            <Button variant="contained" type="submit" fullWidth>Enviar</Button>
+            <Button variant="contained" type="submit" fullWidth disabled={loading}>
+              {loading ? <CircularProgress size={24} color="inherit"/> : "Enviar"}
+            </Button>
           </Grid>
         </Grid>
       </form>
