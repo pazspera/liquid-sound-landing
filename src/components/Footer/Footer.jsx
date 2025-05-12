@@ -25,7 +25,7 @@ export default function Footer() {
             <Grid size={{ xs: 12 }}>
               {/* Info */}
               <Box sx={{ display: { lg: "flex" }, justifyContent: { lg: "space-between" } }}>
-                <Box sx={{ mb: 3, display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 4 }, justifyContent: { md: "center", lg: "flex-start" } }}>
+                <Box sx={{ mb: 3, display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: { sm: 4 }, justifyContent: { sm: "center", lg: "flex-start" } }}>
                   {/* Teléfonos */}
                   <Box>
                     <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1, color: theme.palette.primary.main, transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }} }}>
