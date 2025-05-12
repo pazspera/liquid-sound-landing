@@ -16,19 +16,21 @@ export default function ContactForm() {
   const googleSheetEndpoint = "https://script.google.com/macros/s/AKfycbxBgFCoa5PhCLVFiNYs-g8MV25ZdFrz81xCv52SfU2GfpHIH321geYyi2xPJd8EIi8yGw/exec";
   const emailEndpoint = "/.netlify/functions/contact";
 
-  const sendToGoogleSheet = (formEl) => {
+  const sendToGoogleSheet = async (formEl) => {
     const formData = new FormData(formEl);
     const checked = formEl.querySelector('[name="newsletter"]').checked;
     formData.set("newsletter", checked ? "Sí" : "No");
     formData.set("fecha", new Date().toLocaleDateString());
 
-    fetch(googleSheetEndpoint, {
+    const res = await fetch(googleSheetEndpoint, {
       method: "POST",
       body: formData
     })
-      .catch((err) => {
-        console.log("Sheet Error:", err);
-      } )
+
+    if(!res.ok) {
+      const text = await res.text();
+      throw new Error(`Error al enviar el correo:${res.status}: ${text}`)
+    }
   }
 
   const sendEmail = async (data) => {
@@ -57,7 +59,7 @@ export default function ContactForm() {
     } catch (error) {
       setSendError(true);
       setLoading(false);
-      return
+      return;
     }
 
     const fecha = new Date().toLocaleDateString();
@@ -73,29 +75,13 @@ export default function ContactForm() {
       setSendError(true);
       setLoading(false);
     }
-
-/*   try {
-      const res = await fetch("/.netlify/functions/contact", {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-      console.log("resultado");
-      console.log(result);
-    } catch (error) {
-      console.log("error");
-      console.log(error);
-    } */
-
   }
 
   return (
     <>
       <form onSubmit={handleSubmit(handleForm)}>
         <Grid container rowSpacing={2} columnSpacing={2}>
-          <Grid item size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
+          <Grid size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
             <TextField 
               variant="filled" 
               label="Nombre" 
@@ -109,7 +95,7 @@ export default function ContactForm() {
               <ErrorMessage message={errors.nombre.message}/>
             )}
           </Grid>
-          <Grid item size={{ xs: 12, md: 6, lg: 5 }}>
+          <Grid size={{ xs: 12, md: 6, lg: 5 }}>
             <TextField 
               variant="filled" 
               label="Empresa" 
@@ -119,7 +105,7 @@ export default function ContactForm() {
               sx={{ backgroundColor: theme.palette.common.white}} 
             />
           </Grid>
-          <Grid item size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
+          <Grid size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }}>
             <TextField 
               variant="filled" 
               label="Teléfono" 
@@ -143,7 +129,7 @@ export default function ContactForm() {
               <ErrorMessage message={errors.telefono.message} />
             )}
           </Grid>
-          <Grid item size={{ xs: 12, md: 6, lg: 5 }}>
+          <Grid size={{ xs: 12, md: 6, lg: 5 }}>
             <TextField 
               variant="filled" 
               label="Email" 
@@ -163,7 +149,7 @@ export default function ContactForm() {
               <ErrorMessage message={errors.email.message} />
             )}
           </Grid>
-          <Grid item size={{ xs: 12, lg: 11 }} offset={{ lg: 1 }}>
+          <Grid size={{ xs: 12, lg: 11 }} offset={{ lg: 1 }}>
             <FormControlLabel 
               control={
                 <Checkbox 
@@ -185,7 +171,7 @@ export default function ContactForm() {
               }}
             />
           </Grid>
-          <Grid item size={{ xs: 12, md: 10, lg: 6 }} offset={{ xs: 0, md: 1, lg: 3 }}>
+          <Grid size={{ xs: 12, md: 10, lg: 6 }} offset={{ xs: 0, md: 1, lg: 3 }}>
             <Button variant="contained" type="submit" fullWidth disabled={loading}>
               {loading ? <CircularProgress size={24} color="inherit"/> : "Enviar"}
             </Button>
