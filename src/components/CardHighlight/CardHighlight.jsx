@@ -9,7 +9,6 @@ export default function CardHighlight({card}) {
   return (
     <>
       <Grid
-        item
         size={{ xs: 12, md: 6, lg: 4 }}
         offset={{ md: card.lastCard ? 3 : 0, lg: 0 }}
         sx={{

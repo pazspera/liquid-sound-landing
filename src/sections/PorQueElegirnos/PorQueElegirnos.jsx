@@ -39,7 +39,7 @@ export default function  PorQueElegirnos() {
     <>
       <Container maxWidth="xl" sx={{ py: theme.layout.sectionPadding }}>
         <Grid container>
-          <Grid item size={{ xs: 12 }}>
+          <Grid size={{ xs: 12 }}>
             <Typography 
               variant="h3" 
               component="h2" 

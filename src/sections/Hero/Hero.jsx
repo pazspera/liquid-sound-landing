@@ -8,7 +8,7 @@ export default function Hero() {
     <>
       <Container maxWidth="xl" sx={{ py: theme.layout.sectionPadding }}>
         <Grid container direction="row" spacing={2} sx={{ display: "flex", alignItems: "center"}}>
-          <Grid item size={{ xs: 12, md: 6, lg: 6 }}>
+          <Grid size={{ xs: 12, md: 6, lg: 6 }}>
             <Typography 
               variant="h1" 
               component="h1" 
@@ -28,7 +28,7 @@ export default function Hero() {
               <Button variant="text" href="#contacto">Pedir cotización</Button>
             </Box>
           </Grid>
-          <Grid item size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }} sx={{ pl: { lg: 3 }}}>
+          <Grid size={{ xs: 12, md: 6, lg: 5 }} offset={{ lg: 1 }} sx={{ pl: { lg: 3 }}}>
             <CardMedia 
               component="img"
               image="/img/hero-img.png"
