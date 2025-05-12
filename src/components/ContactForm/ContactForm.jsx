@@ -10,8 +10,8 @@ export default function ContactForm() {
   const theme = useTheme();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
-  console.log(errors);
 
   const googleSheetEndpoint = "https://script.google.com/macros/s/AKfycbxBgFCoa5PhCLVFiNYs-g8MV25ZdFrz81xCv52SfU2GfpHIH321geYyi2xPJd8EIi8yGw/exec";
   const emailEndpoint = "/.netlify/functions/contact";
@@ -49,18 +49,29 @@ export default function ContactForm() {
   const handleForm = async (data, event) => {
     event.preventDefault();
     setLoading(true);
+    setSendError(false);
 
-    sendToGoogleSheet(event.target);
+    // Envío al GoogleSheet
+    try {
+      sendToGoogleSheet(event.target);
+    } catch (error) {
+      setSendError(true);
+      setLoading(false);
+      return
+    }
 
     const fecha = new Date().toLocaleDateString();
     const emailData = { ...data, fecha };
 
+    // Envío email
     try {
       await sendEmail(emailData);
       setLoading(false);
       navigate("/gracias-por-contactarnos");
     } catch (err) {
       console.log("Error mandando mail",err);
+      setSendError(true);
+      setLoading(false);
     }
 
 /*   try {
@@ -179,6 +190,13 @@ export default function ContactForm() {
               {loading ? <CircularProgress size={24} color="inherit"/> : "Enviar"}
             </Button>
           </Grid>
+            {sendError && (
+              <Grid size={{ xs: 12 }}>
+                <Typography color="warning" align="center">
+                  Ocurrió un error al enviar el formulario. Puede intentarlo nuevamente más tarde o contactarnos directamente por <Typography component="a" href="https://wa.me/5491156548438" target="_blank" rel="noopener noreferrer" color="warning">Whatsapp</Typography>.
+                </Typography>
+              </Grid>
+            )}
         </Grid>
       </form>
     </>
