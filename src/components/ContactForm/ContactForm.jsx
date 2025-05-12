@@ -54,7 +54,6 @@ export default function ContactForm() {
 
     try {
       await sendEmail(emailData);
-      reset();
       navigate("/gracias-por-contactarnos");
     } catch (err) {
       console.log("Error mandando mail",err);
