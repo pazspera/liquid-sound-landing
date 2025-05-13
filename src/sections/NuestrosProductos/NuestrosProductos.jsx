@@ -20,10 +20,11 @@ export default function NuestrosProductos() {
           <CardMedia
             component="img"
             srcSet={
-              "/img/productos_liquid_sound_small.jpg 480w, /img/quienes-somos-medium.png 768w, /img/quienes-somos-large.png 1280w"
+              "/img/productos_liquid_sound_small.jpg 480w, /img/productos_liquid_sound_medium.jpg 768w, /img/productos_liquid_sound_large.jpg 1280w"
             }
             className={styles.image}
             sizes="(max-width: 600px) 480px, (max-width: 960px) 768px, 1280px"
+            alt="Familia de productos de Liquid Sound"
           />
 
           <Box 
