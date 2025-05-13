@@ -19,8 +19,11 @@ export default function NuestrosProductos() {
         <Box className={styles.gridContainer}>
           <CardMedia
             component="img"
-            src="/img/placeholder.png"
+            srcSet={
+              "/img/productos_liquid_sound_small.jpg 480w, /img/quienes-somos-medium.png 768w, /img/quienes-somos-large.png 1280w"
+            }
             className={styles.image}
+            sizes="(max-width: 600px) 480px, (max-width: 960px) 768px, 1280px"
           />
 
           <Box 
