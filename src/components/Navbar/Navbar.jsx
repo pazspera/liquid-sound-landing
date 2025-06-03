@@ -61,7 +61,7 @@ export default function Navbar() {
   const DesktopNav = () => {
     return (
       <>
-        <Toolbar elevation={0} sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar elevation={0} sx={{ display: "flex", justifyContent: "space-between" }} disableGutters>
           <NavLink to="/">
             <Typography component="span">
               <CardMedia component="img" src="/img/logo-liquid-sound.png" alt="Logo Liquid Sound" sx={{ maxWidth: { xs: "100px", lg: "120px" } }} />
