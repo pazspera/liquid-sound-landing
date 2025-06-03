@@ -87,7 +87,7 @@ export default function Navbar() {
     <>
       <Box sx={{ backgroundColor: theme.palette.common.white }}>
         <Paper elevation={1} component="header" sx={{ backgroundColor: theme.palette.common.white }}>
-          <Container maxWidth="lg" sx={{ backgroundColor: theme.palette.common.white}}>
+          <Container maxWidth="xl" sx={{ backgroundColor: theme.palette.common.white}}>
             {isMobile ? <MobileNav /> : <DesktopNav />}
           </Container>
         </Paper>
