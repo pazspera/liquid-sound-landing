@@ -1,5 +1,5 @@
 import { render } from "@react-email/render";
-import ContactFormEmail from "../../src/emails/ContactFormEmail";
+import ContactFormEmail from "./ContactFormEmail";
 
 const EMAIL_JS_SERVICE_ID = process.env.EMAIL_JS_SERVICE_ID;
 const EMAIL_JS_PUBLIC_KEY = process.env.EMAIL_JS_PUBLIC_KEY;
