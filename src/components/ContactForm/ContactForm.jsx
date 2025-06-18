@@ -24,13 +24,16 @@ export default function ContactForm() {
 
     const res = await fetch(googleSheetEndpoint, {
       method: "POST",
-      body: formData
+      body: formData,
+      redirect: "follow"
     })
 
     if(!res.ok) {
       const text = await res.text();
       throw new Error(`Error al enviar el correo:${res.status}: ${text}`)
     }
+
+    return { success: true };
   }
 
   const sendEmail = async (data) => {
@@ -58,7 +61,7 @@ export default function ContactForm() {
 
     // Envío al GoogleSheet
     try {
-      sendToGoogleSheet(event.target);
+      await sendToGoogleSheet(event.target);
       setLoading(false);
       navigate("/gracias-por-contactarnos");
     } catch (error) {
