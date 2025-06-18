@@ -53,6 +53,9 @@ export default function ContactForm() {
     setLoading(true);
     setSendError(false);
 
+    const fecha = new Date().toLocaleDateString();
+    const emailData = { ...data, fecha };
+
     // Envío al GoogleSheet
     try {
       sendToGoogleSheet(event.target);
@@ -61,9 +64,6 @@ export default function ContactForm() {
       setLoading(false);
       return;
     }
-
-    const fecha = new Date().toLocaleDateString();
-    const emailData = { ...data, fecha };
 
     // Envío email
     try {
