@@ -7,5 +7,5 @@
   node_bundler = "esbuild"
   external_node_modules = []
 
-  [functions.esbuild_config_override]
+  [functions."*".esbuild_config_override]
   loader = { ".js" = "jsx", ".mjs" = "jsx" }
