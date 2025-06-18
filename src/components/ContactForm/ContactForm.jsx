@@ -66,7 +66,7 @@ export default function ContactForm() {
     }
 
     // Envío email
-    try {
+    /* try {
       await sendEmail(emailData);
       setLoading(false);
       navigate("/gracias-por-contactarnos");
@@ -74,7 +74,7 @@ export default function ContactForm() {
       console.log("Error mandando mail",err);
       setSendError(true);
       setLoading(false);
-    }
+    } */
   }
 
   return (
