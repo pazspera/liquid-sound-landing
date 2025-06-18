@@ -1,5 +1,7 @@
 import { Resend } from "resend";
+import { render } from "@react-email/render";
 import dotenv from "dotenv";
+import ContactFormEmail from "../../src/emails/ContactFormEmail";
 
 dotenv.config();
 
