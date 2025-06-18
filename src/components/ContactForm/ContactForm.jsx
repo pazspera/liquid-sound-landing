@@ -59,6 +59,8 @@ export default function ContactForm() {
     // Envío al GoogleSheet
     try {
       sendToGoogleSheet(event.target);
+      setLoading(false);
+      navigate("/gracias-por-contactarnos");
     } catch (error) {
       setSendError(true);
       setLoading(false);
