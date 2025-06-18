@@ -6,6 +6,8 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
   external_node_modules = []
-
-  [functions."*".esbuild_config_override]
+  esbuild_target = "node18"
+  
+  [functions.esbuild_config_override]
   loader = { ".js" = "jsx", ".mjs" = "jsx" }
+  plugins = []
