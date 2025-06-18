@@ -6,11 +6,6 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
   external_node_modules = []
-  esbuild_config_override = """
-  module.exports = {
-    loader: {
-      '.js': 'jsx',
-      '.mjs': 'jsx' # Esto es lo más importante para tu caso
-    }
-  }
-  """
+
+  [functions.esbuild_config_override]
+  loader = { ".js" = "jsx", ".mjs" = "jsx" }
