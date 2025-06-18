@@ -14,7 +14,7 @@ export default function ContactForm() {
 
 
   const googleSheetEndpoint = "https://script.google.com/macros/s/AKfycbxBgFCoa5PhCLVFiNYs-g8MV25ZdFrz81xCv52SfU2GfpHIH321geYyi2xPJd8EIi8yGw/exec";
-  const emailEndpoint = "/.netlify/functions/contact";
+  const emailEndpoint = "/.netlify/functions/contact.mjs";
 
   const sendToGoogleSheet = async (formEl) => {
     const formData = new FormData(formEl);
