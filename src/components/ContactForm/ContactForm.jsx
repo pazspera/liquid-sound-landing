@@ -21,7 +21,6 @@ export default function ContactForm() {
   
 
   const sendToGoogleSheet = async (formData) => {
-    console.log("entra al sheet")
 
     const res = await fetch(googleSheetEndpoint, {
       method: "POST",
@@ -31,9 +30,6 @@ export default function ContactForm() {
 
     if(!res.ok) {
       const text = await res.text();
-      console.log("error en el sheet");
-      console.log(res.status);
-      console.log(res.message)
       throw new Error(`Error al enviar el correo:${res.status}: ${text}`)
     }
 
@@ -41,7 +37,6 @@ export default function ContactForm() {
   }
 
   const sendEmail = async (dataToSend) => {
-    console.log("entra a send email")
 
     try {
       const res = await emailjs.send(
@@ -52,15 +47,11 @@ export default function ContactForm() {
       )
       
       if(res.status !== 200) {
-        console.log("error en send mail");
-        console.log(res.status);
-        console.log(res.message);
         throw new Error(`Error al enviar correo: ${res.status}: ${res.text}`)
       }
       
       return { success: true };
     } catch (error) {
-      console.log("Error mandando email (catch)", error);
       throw new Error(`Error al enviar el correo: ${error.message || 'Error desconocido' }`)
     }
   }
@@ -105,7 +96,6 @@ export default function ContactForm() {
       setLoading(false);
       navigate("/gracias-por-contactarnos");
     } catch (err) {
-      console.log("Error mandando mail",err);
       setSendError(true);
       setLoading(false);
     }
