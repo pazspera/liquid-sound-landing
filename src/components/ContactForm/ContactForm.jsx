@@ -14,13 +14,15 @@ export default function ContactForm() {
   const [sendError, setSendError] = useState(false);
 
 
-  const googleSheetEndpoint = import.meta.env.GOOGLE_SHEET_ENDPOINT;
-  const serviceId = import.meta.env.EMAIL_JS_SERVICE_ID;
-  const templateId = import.meta.env.EMAIL_JS_TEMPLATE_ID;
-  const publicKey = import.meta.env.EMAIL_JS_PUBLIC_KEY;
+  const googleSheetEndpoint = import.meta.env.VITE_GOOGLE_SHEET_ENDPOINT;
+  console.log("Endpoint de Google Sheet:", googleSheetEndpoint);
+  const serviceId = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
   
 
   const sendToGoogleSheet = async (formEl) => {
+    console.log("entra al sheet")
     const formData = new FormData(formEl);
     const checked = formEl.querySelector('[name="newsletter"]').checked;
     formData.set("newsletter", checked ? "Sí" : "No");
@@ -34,6 +36,9 @@ export default function ContactForm() {
 
     if(!res.ok) {
       const text = await res.text();
+      console.log("error en el sheet");
+      console.log(res.status);
+      console.log(res.message)
       throw new Error(`Error al enviar el correo:${res.status}: ${text}`)
     }
 
@@ -41,6 +46,7 @@ export default function ContactForm() {
   }
 
   const sendEmail = async (data) => {
+    console.log("entra a send email")
     const res = await emailjs.send(
       serviceId,
       templateId,
@@ -56,6 +62,9 @@ export default function ContactForm() {
     
     if(!res.ok) {
       const text = await res.text();
+      console.log("error en send mail");
+      console.log(res.status);
+      console.log(res.message);
       throw new Error(`Error al enviar correo: ${res.status}: ${text}`)
     }
     
