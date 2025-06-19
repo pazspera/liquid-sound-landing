@@ -15,18 +15,12 @@ export default function ContactForm() {
 
 
   const googleSheetEndpoint = import.meta.env.VITE_GOOGLE_SHEET_ENDPOINT;
-  console.log("Endpoint de Google Sheet:", googleSheetEndpoint);
   const serviceId = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
   const templateId = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
   
 
-  const sendToGoogleSheet = async (formEl) => {
-    console.log("entra al sheet")
-    const formData = new FormData(formEl);
-    const checked = formEl.querySelector('[name="newsletter"]').checked;
-    formData.set("newsletter", checked ? "Sí" : "No");
-    formData.set("fecha", new Date().toLocaleDateString());
+  const sendToGoogleSheet = async (formData) => {
 
     const res = await fetch(googleSheetEndpoint, {
       method: "POST",
@@ -36,38 +30,30 @@ export default function ContactForm() {
 
     if(!res.ok) {
       const text = await res.text();
-      console.log("error en el sheet");
-      console.log(res.status);
-      console.log(res.message)
       throw new Error(`Error al enviar el correo:${res.status}: ${text}`)
     }
 
     return { success: true };
   }
 
-  const sendEmail = async (data) => {
-    console.log("entra a send email")
-    const res = await emailjs.send(
-      serviceId,
-      templateId,
-      {
-        user_name: data.nombre,
-        user_email: data.email,
-        empresa: data.empresa,
-        telefono: data.telefono,
-        newsletter: data.newsletter,
-      },
-      publicKey
-    )
+  const sendEmail = async (dataToSend) => {
     
-    if(!res.ok) {
-      const text = await res.text();
-      console.log("error en send mail");
-      console.log(res.status);
-      console.log(res.message);
-      throw new Error(`Error al enviar correo: ${res.status}: ${text}`)
+    try {
+      const res = await emailjs.send(
+        serviceId,
+        templateId,
+        dataToSend,
+        publicKey
+      )
+      
+      if(res.status !== 200) {
+        throw new Error(`Error al enviar correo: ${res.status}: ${res.text}`)
+      }
+      
+      return { success: true };
+    } catch (error) {
+      throw new Error(`Error al enviar el correo: ${error.message || 'Error desconocido' }`)
     }
-    
   }
 
   const handleForm = async (data, event) => {
@@ -75,14 +61,29 @@ export default function ContactForm() {
     setLoading(true);
     setSendError(false);
 
-    const fecha = new Date().toLocaleDateString();
-    const emailData = { ...data, fecha };
+    const fechaActual = new Date().toLocaleDateString();
+    const newsletterValue = data.newsletter ? "Sí" : "No";
+    const empresaValue = (data.empresa && data.empresa.trim() !== 0 )? data.empresa : "-";
+
+    // emailJS requiere un objeto, google sheet requiere formdata
+    // por eso hay que hacer cada uno por separado
+    const emailJsData = { 
+      user_name: data.nombre,
+      user_email: data.email,
+      telefono: data.telefono,
+      fecha: fechaActual,
+      newsletter: newsletterValue,
+      empresa: empresaValue,
+    };
+
+    const formDataforSheet = new FormData(event.target);
+    formDataforSheet.set("newsletter", newsletterValue);
+    formDataforSheet.set("fecha", fechaActual);
+    formDataforSheet.set("empresa", empresaValue);
 
     // Envío al GoogleSheet
     try {
-      await sendToGoogleSheet(event.target);
-      setLoading(false);
-      navigate("/gracias-por-contactarnos");
+      await sendToGoogleSheet(formDataforSheet);
     } catch (error) {
       setSendError(true);
       setLoading(false);
@@ -91,11 +92,10 @@ export default function ContactForm() {
 
     // Envío email
     try {
-      await sendEmail(emailData);
+      await sendEmail(emailJsData);
       setLoading(false);
       navigate("/gracias-por-contactarnos");
     } catch (err) {
-      console.log("Error mandando mail",err);
       setSendError(true);
       setLoading(false);
     }
