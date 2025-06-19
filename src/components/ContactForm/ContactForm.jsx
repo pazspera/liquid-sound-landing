@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
@@ -13,8 +14,11 @@ export default function ContactForm() {
   const [sendError, setSendError] = useState(false);
 
 
-  const googleSheetEndpoint = "https://script.google.com/macros/s/AKfycbxBgFCoa5PhCLVFiNYs-g8MV25ZdFrz81xCv52SfU2GfpHIH321geYyi2xPJd8EIi8yGw/exec";
-  const emailEndpoint = "/.netlify/functions/contact";
+  const googleSheetEndpoint = import.meta.env.GOOGLE_SHEET_ENDPOINT;
+  const serviceId = import.meta.env.EMAIL_JS_SERVICE_ID;
+  const templateId = import.meta.env.EMAIL_JS_TEMPLATE_ID;
+  const publicKey = import.meta.env.EMAIL_JS_PUBLIC_KEY;
+  
 
   const sendToGoogleSheet = async (formEl) => {
     const formData = new FormData(formEl);
@@ -37,18 +41,24 @@ export default function ContactForm() {
   }
 
   const sendEmail = async (data) => {
-    const res = await fetch(emailEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
+    const res = await emailjs.send(
+      serviceId,
+      templateId,
+      {
+        user_name: data.nombre,
+        user_email: data.email,
+        empresa: data.empresa,
+        telefono: data.telefono,
+        newsletter: data.newsletter,
+      },
+      publicKey
+    )
     
     if(!res.ok) {
       const text = await res.text();
       throw new Error(`Error al enviar correo: ${res.status}: ${text}`)
     }
     
-    return res.json();
   }
 
   const handleForm = async (data, event) => {
@@ -71,7 +81,7 @@ export default function ContactForm() {
     }
 
     // Envío email
-    /* try {
+    try {
       await sendEmail(emailData);
       setLoading(false);
       navigate("/gracias-por-contactarnos");
@@ -79,7 +89,7 @@ export default function ContactForm() {
       console.log("Error mandando mail",err);
       setSendError(true);
       setLoading(false);
-    } */
+    }
   }
 
   return (
