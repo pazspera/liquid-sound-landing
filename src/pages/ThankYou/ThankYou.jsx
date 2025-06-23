@@ -10,6 +10,7 @@ export default function ThankYou() {
   return (
     <>
       <NoticeSection 
+        sx={{ overflowX: "hidden" }}
         title={"¡Gracias por contactarnos!"} 
         message={"Su mensaje fue enviado."} 
         secondaryMessage={"Nuestro equipo se pondrá en contacto a la brevedad."} 

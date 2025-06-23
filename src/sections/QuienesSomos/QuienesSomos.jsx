@@ -8,7 +8,7 @@ export default function QuienesSomos() {
 
   return (
     <>
-      <Container maxWidth="xl" sx={{ py: theme.layout.sectionPadding}}>
+      <Container maxWidth="xl" sx={{ py: theme.layout.sectionPadding, overflowX: "hidden"}}>
         <Grid container spacing={2} alignItem="stretch">
           <Grid size={{ xs: 12, md: 7, lg: 7 }} sx={{ display: "flex", flexDirection: "column", alignSelf: "center"  }} alignItems="stretch">
             <Box sx={{ pr: { lg: 8 }, flex: 1}}>

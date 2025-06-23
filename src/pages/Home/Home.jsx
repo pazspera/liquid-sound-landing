@@ -13,14 +13,16 @@ export default function Home() {
   
   return (
     <>
-      <Hero></Hero>
-      <PorQueElegirnos></PorQueElegirnos>
-      <NuestrosProductos></NuestrosProductos>
-      <ProductosSector></ProductosSector>
-      <QuienesSomos></QuienesSomos>
-      <NuestrosClientes></NuestrosClientes>
-      <Contacto></Contacto>
-      <WhatsappWidget />
+      <main sx={{ overflowX: 'hidden' }}>
+        <Hero></Hero>
+        <PorQueElegirnos></PorQueElegirnos>
+        <NuestrosProductos></NuestrosProductos>
+        <ProductosSector></ProductosSector>
+        <QuienesSomos></QuienesSomos>
+        <NuestrosClientes></NuestrosClientes>
+        <Contacto></Contacto>
+        <WhatsappWidget />
+      </main>
     </>
   )
 }
