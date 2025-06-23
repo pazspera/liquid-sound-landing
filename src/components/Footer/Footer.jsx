@@ -51,25 +51,71 @@ export default function Footer() {
                   </Box>
                   {/* Links */}
                   <Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1, transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }} }} 
+                    <Box sx={{ 
+                      display: "flex", 
+                      gap: 1, 
+                      alignItems: "center", 
+                      mb: 1, 
+                      transition: "color 0.3s ease",
+                      "& svg": { 
+                        color: theme.palette.primary.main,
+                        transition: "color 0.3s ease" 
+                      },
+                      "& .MuiTypography-root": { 
+                        color: theme.palette.primary.main, 
+                        transition: "color 0.3s ease, text-decoration-color 0.3s ease",
+                        textDecoration: "underline", 
+                        textDecorationColor: theme.palette.primary.main 
+                      }, 
+                      "&:hover": {
+                        "& .MuiTypography-root": {
+                          color: theme.palette.text.hoverLinks,
+                          textDecorationColor: theme.palette.text.hoverLinks 
+                        }, 
+                        "& svg": { 
+                          color: theme.palette.text.hoverLinks,                 
+                        }} }} 
                       component="a"
                       variant="body1"
                       href="mailto:ventas@liquidsound.com.ar">
                       <EmailIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
                       <Typography
-                        sx={{ color: theme.palette.primary.main, textDecorationColor: theme.palette.primary.main }}
+                        sx={{ color: theme.palette.primary.main, textDecoration: "underline", textDecorationColor: theme.palette.primary.main }}
                       >
                         ventas@liquidsound.com.ar
                       </Typography>
                     </Box>
-                    <Box sx={{ display: "flex", gap: 1, alignItems: "center", mb: 1, transition: "color 0.3s ease", "&:hover": { color: theme.palette.text.hoverLinks, "& .MuiTypography-root": { color: theme.palette.text.hoverLinks }, "& svg": { color: theme.palette.text.hoverLinks }} }} 
+                    <Box sx={{ 
+                      display: "flex", 
+                      gap: 1, 
+                      alignItems: "center", 
+                      mb: 1, 
+                      transition: "color 0.3s ease",
+                      "& svg": { 
+                        color: theme.palette.primary.main,
+                        transition: "color 0.3s ease" 
+                      },
+                      "& .MuiTypography-root": { 
+                        color: theme.palette.primary.main, 
+                        transition: "color 0.3s ease, text-decoration-color 0.3s ease",
+                        textDecoration: "underline", 
+                        textDecorationColor: theme.palette.primary.main 
+                      }, 
+                      "&:hover": {
+                        "& .MuiTypography-root": {
+                          color: theme.palette.text.hoverLinks,
+                          textDecorationColor: theme.palette.text.hoverLinks 
+                        }, 
+                        "& svg": { 
+                          color: theme.palette.text.hoverLinks,                 
+                        }} }}
                       component="a"
                       variant="body1"
                       href="https://www.liquidsound.com.ar/"
                       target="_blank"
                       rel="noopener noreferrer">
                       <StoreIcon sx={{ fontSize: 28, mr: 0.5, color: theme.palette.primary.main }} />
-                      <Typography sx={{ color: theme.palette.primary.main, textDecorationColor: theme.palette.primary.main }}>
+                      <Typography sx={{ color: theme.palette.primary.main, textDecoration: "underline", textDecorationColor: theme.palette.primary.main }}>
                         ¡Visite nuestra tienda!
                       </Typography>
                     </Box>
